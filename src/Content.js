@@ -17,15 +17,6 @@ class Content extends React.Component {
 					<p>Architecture in the Afternet is an M.Arch thesis delivered and performed at MIT Architecture by Sam Ghantous. The project was advised by William O’Brien Jr., and readers Antonio Furgiuele, Curtis Roth, Andrew Kovacs.</p>
 					</div>
 				</div>
-				{/*      ACKNOWLEDGMENTS     */}
-				<div className="row" id="footer">
-					<p>
-					This project was made possible with the support of many individuals.</p>
-					<p> To make the twitter bot a functioning thing, Austin Wade Smith and Anran Li provided tremendous technical support and critical feedback.</p>
-					<p>Wenfei Xu made this a real website. </p>
-					<p>My team at large also included Alex Kobald, Grisha Enikolopov, Jamie Farrell, Jason Minor, Kalli Retzepi, Liz Galvez, Xhulio Binjaku, Yasaman Tahouni.</p>
-					<p>Additional critical feedback provided by Albert Lopez, Austin Wade Smith, Eli Keller, Faiyaz Khan, John May, Lucy Lui, and Peter Osborne.</p>
-				</div>
 	    	</div>
 	    )
 	}

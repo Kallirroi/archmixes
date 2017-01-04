@@ -5,6 +5,7 @@ import ButtonFeed from './ButtonFeed';
 import Icons from './Icons';
 import ContentImages from './ContentImages';
 import Content from './Content';
+import ContentFooter from './ContentFooter';
 
 import './App.css';
 import './normalize.css';
@@ -21,6 +22,7 @@ class App extends Component {
           <Icons/>
           <ContentImages/>
           <Content/>
+          <ContentFooter/>
         </div>
       </div>
     );
