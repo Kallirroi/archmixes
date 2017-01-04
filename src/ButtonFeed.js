@@ -1,5 +1,7 @@
 import React from 'react';
-
+import './App.css';
+import './normalize.css';
+import './skeleton.css';
 
 class ButtonFeed extends React.Component {
 	render() {

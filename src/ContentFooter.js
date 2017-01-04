@@ -1,5 +1,7 @@
 import React from 'react';
-
+import './App.css';
+import './normalize.css';
+import './skeleton.css';
 
 class ContentFooter extends React.Component {
 	render() {

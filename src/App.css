@@ -52,28 +52,29 @@ body { cursor: crosshair; }
     transform: rotate(-15deg);
 }
 
-#footer{
- /*position: fixed;*/
 
- padding-left:12%;
- width: 10%;
- margin-left:90%;
- margin-top:10em;
- font-size:60%; 
- font-style: italic;
-
-}
-
-.images1{
- position: absolute;
-
-/*  width: 80%;
-  margin:0 auto;
-  height: 80%;*/
+.images {
+  position: absolute;
   opacity: 0.9;
   z-index: -80;
-
 }
+
+.image1 {
+  background: url('../images/bld1.png') center no-repeat;
+  top: 5px;
+  left: -5em;
+  width: 304px; 
+  height: 100px;
+}
+.image2 {
+  background: url('../images/bld2.png') center no-repeat;
+  top: 10%;
+  left: -3em;
+  width: 150px; 
+  height: 100px;
+}
+
+
 
 #buttonstylz1{
   position:fixed;
@@ -148,5 +149,17 @@ body { cursor: crosshair; }
 #addimages {
   width:100%;
   height: 100%;
-  box-shadow: 10px 10px 5px #888888
+  box-shadow: 10px 10px 5px #888888;
+}
+
+#footer{
+ /*position: fixed;*/
+
+ padding-left:12%;
+ width: 10%;
+ margin-left:90%;
+ margin-top:10em;
+ font-size:60%; 
+ font-style: italic;
+
 }

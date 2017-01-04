@@ -1,5 +1,7 @@
 import React from 'react';
-
+import './App.css';
+import './normalize.css';
+import './skeleton.css';
 
 class Content extends React.Component {
 	render() {
