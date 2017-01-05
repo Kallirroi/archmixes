@@ -7,6 +7,7 @@ class SvgRenderer extends Component {
     super();
     this.onRef = ref => this.ref = ref;
     this.onDrag = d3.drag().on("drag", (d) => {
+      console.log("drag")
       d.x = d3.event.x;
       d.y = d3.event.y;
     });
@@ -30,24 +31,101 @@ class SvgRenderer extends Component {
       return;
     }
 
-    const svg = d3.select(this.ref);
-
     /*----------------------------- Main Vis --------------------*/
+    let svg = d3.select(this.ref);
 
-    const actors = svg.selectAll('path') /* should be g */
-      .data(this.props.data, d => d.id);
+    let padding=1.5,
+    clusterPadding = 1, // separation between different-color circles
+    maxRadius = 12;
+    
+	let n = 10, // total number of nodes
+	    m = 1, // number of distinct clusters
+	    z = d3.scaleOrdinal(d3.schemeCategory20),
+	    clusters = new Array(m);
 
+	let nodes = d3.range(n).map(() => {
+	    let i = Math.floor(Math.random() * m),
+	        radius = Math.sqrt((i + 1) / m * -Math.log(Math.random())) * maxRadius,
+	        d = {cluster: i, r: radius};
+	    if (!clusters[i] || (radius > clusters[i].r)) clusters[i] = d;
+	    return d;
+	});
 
-    actors.enter().append('circle')
-      .attr('cx', (d,i) => Math.random()*i * 100 + 10)
-      .attr('cy', (d,i) => Math.random() * this.props.height + 10)
-      .attr('r', '5')
-      .call(this.onDrag);
+	let circles = svg.append('g')
+	      .datum(nodes)
+	    .selectAll('.circle')
+	      .data(d => d)
+	    .enter().append('circle')
+	      .attr('r', (d) => d.r)
+	      .attr('fill', (d) => z(d.cluster))
+	      .call(this.onDrag);
 
-    actors.exit()
-      .remove();
-  }
+	d3.forceSimulation(nodes)
+	    .velocityDecay(0.2)
+	    .force("collide", collide)
+	    .force("cluster", clustering)
+	    .on("tick", ticked);
+
+	function ticked() {
+	    circles
+	        .attr('cx', (d) => d.x)
+	        .attr('cy', (d) => d.y);
+	}   
+
+	function clustering(alpha) {
+	    nodes.forEach(function(d) {
+	      var cluster = clusters[d.cluster];
+	      if (cluster === d) return;
+	      var x = d.x - cluster.x,
+	          y = d.y - cluster.y,
+	          l = Math.sqrt(x * x + y * y),
+	          r = 100*(d.r + cluster.r);
+	      if (l !== r) {
+	        l = (l - r) / l * alpha;
+	        d.x -= x *= l;
+	        d.y -= y *= l;
+	        cluster.x += x;
+	        cluster.y += y;
+	      }  
+	    });
+	}
+
+	function collide(alpha) {
+	  var quadtree = d3.quadtree()
+	      .x((d) => d.x)
+	      .y((d) => d.y)
+	      .addAll(nodes);
+
+	  nodes.forEach(function(d) {
+	    var r = d.r + maxRadius + Math.max(padding, clusterPadding),
+	        nx1 = d.x - r,
+	        nx2 = d.x + r,
+	        ny1 = d.y - r,
+	        ny2 = d.y + r;
+	    quadtree.visit(function(quad, x1, y1, x2, y2) {
+
+	      if (quad.data && (quad.data !== d)) {
+	        var x = d.x - quad.data.x,
+	            y = d.y - quad.data.y,
+	            l = Math.sqrt(x * x + y * y),
+	            r = d.r + quad.data.r + (d.cluster === quad.data.cluster ? padding : clusterPadding);
+	        if (l < r) {
+	          l = (l - r) / l * alpha;
+	          d.x -= x *= l;
+	          d.y -= y *= l;
+	          quad.data.x += x;
+	          quad.data.y += y;
+	        }
+	      }
+	      return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
+	    });
+	  });
+	}
+
+	}
+
 }
+
 
 
 export default SvgRenderer;

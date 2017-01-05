@@ -28,13 +28,7 @@
 
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.container {
-  position: relative;
-  margin: 0 auto;
-  box-sizing: border-box; 
-  background-color: #fff;
-  border: 1px solid yellow;
-}
+
 .column,
 .columns {
   width: 100%;

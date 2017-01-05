@@ -20,39 +20,15 @@ body { cursor: crosshair; }
   display: none;
 }
 
+.container {
+  position: relative;
+  margin: 0 auto;
+  box-sizing: border-box; 
+  background-color: #fff;
+  border: 1px solid yellow;
+}
 
 /* ------------------------------------------------ICONS------------------------------------------------*/
-.rotate1{
-	-webkit-transform: rotate(-35deg);
-    -moz-transform: rotate(-35deg);
-    -ms-transform: rotate(-35deg);
-    -o-transform: rotate(-35deg);
-    transform: rotate(-35deg);
-}
-
-.rotate2{
-	-webkit-transform: rotate(115deg);
-    -moz-transform: rotate(115deg);
-    -ms-transform: rotate(115deg);
-    -o-transform: rotate(115deg);
-    transform: rotate(115deg);
-}
-
-.rotate3{
-	-webkit-transform: rotate(215deg);
-    -moz-transform: rotate(215deg);
-    -ms-transform: rotate(215deg);
-    -o-transform: rotate(215deg);
-    transform: rotate(215deg);
-}
-
-.rotate4{
-  -webkit-transform: rotate(-15deg);
-    -moz-transform: rotate(-15deg);
-    -ms-transform: rotate(-15deg);
-    -o-transform: rotate(-15deg);
-    transform: rotate(-15deg);
-}
 
 .Icons {
   position: relative;
@@ -65,72 +41,12 @@ body { cursor: crosshair; }
   z-index: 100;
   position: relative;
   border: 1px solid red;
+  z-index: 100;
 }
 
 .icon {
   width: 40px;
   height: 40px;
-  z-index: 100;
-}
-.insta {
-  background: url('../images/insta.svg') center no-repeat;
-  padding-left:1.26em;
-}
-.twitter {
-  background: url('../images/twitter.svg') center no-repeat;
-  padding-left: 0.6em;
-}
-.email {
-  background: url('../images/email.svg') center no-repeat;
-  padding-left: 0.2em;
-}
-.pinterest {
-  background: url('../images/pinterest.svg') center no-repeat;
-  padding-left: 0.7em;
-}
-.youtube {
-  background: url('../images/youtube.svg') center no-repeat;
-  padding-left: 0.2em;
-}
-.tumblr {
-  background: url('../images/tumblr.svg') center no-repeat;
-  padding-left: 1.2em;
-}
-.ello {
-  background: url('../images/ello.svg') center no-repeat;
-  padding-left: 1.2em;
-}
-.ello {
-  background: url('../images/ello.svg') center no-repeat;
-  padding-left: 1.2em;
-}
-.ebay {
-  background: url('../images/ebay.svg') center no-repeat;
-  padding-left: 1.2em;
-}
-.etsy {
-  background: url('../images/etsy.svg') center no-repeat;
-  padding-left: 1.2em;
-}
-.sketchfab {
-  background: url('../images/sketchfab.svg') center no-repeat;
-  padding-left: 1.2em;
-}
-.tumblr2 {
-  background: url('../images/tumblr2.svg') center no-repeat;
-  padding-left: 1.2em;
-}
-.tumblr3 {
-  background: url('../images/tumblr3.svg') center no-repeat;
-  padding-left: 1.2em;
-}
-.reddit {
-  background: url('../images/reddit.svg') center no-repeat;
-  padding-left: 1.2em;
-}
-.shopify {
-  background: url('../images/shopify.svg') center no-repeat;
-  padding-left: 1.2em;
 }
 
 
@@ -148,26 +64,7 @@ body { cursor: crosshair; }
   position: relative;
   border: 1px solid blue;
 }
-.images {
-  position: absolute;
-  opacity: 0.9;
-  z-index: -1;
-}
 
-.image1 {
-  background: url('../images/bld1.png') center no-repeat;
-  top: 5px;
-  left: -5em;
-  width: 304px; 
-  height: 100px;
-}
-.image2 {
-  background: url('../images/bld2.png') center no-repeat;
-  top: 10%;
-  left: -3em;
-  width: 150px; 
-  height: 100px;
-}
 
 /* ------------------------------------------------Title------------------------------------------------*/
 
@@ -185,7 +82,6 @@ body { cursor: crosshair; }
 .Content {
   max-width: 960px;
   margin: 0 auto;
-  z-index: 100;
   position: relative;
   border: 1px solid green;
   padding-bottom: 20em;

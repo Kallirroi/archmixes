@@ -11,7 +11,6 @@ import './App.css';
 import './normalize.css';
 import './skeleton.css';
 
-var data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 class App extends Component {
   render() {
     const containerWidth = window.innerWidth;
@@ -21,8 +20,8 @@ class App extends Component {
       <div className="App">
         <div className="container">
           <Title/>
-          <Icons data={data} width={containerWidth} height={containerHeight/4}/>
-          <ContentImages data={data} width={containerWidth} height={1.4*containerHeight}/>
+          <Icons width={containerWidth} height={containerHeight/4}/>
+          <ContentImages width={containerWidth} height={1.4*containerHeight}/>
           <Content/>
           <ContentFooter/>
         </div>
