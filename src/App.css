@@ -52,6 +52,77 @@ body { cursor: crosshair; }
     transform: rotate(-15deg);
 }
 
+.icon {
+  width: 40px;
+  height: 40px;
+  z-index: 100;
+}
+.insta {
+  background: url('../images/insta.svg') center no-repeat;
+  padding-left:1.26em;
+}
+.twitter {
+  background: url('../images/twitter.svg') center no-repeat;
+  padding-left: 0.6em;
+}
+.email {
+  background: url('../images/email.svg') center no-repeat;
+  padding-left: 0.2em;
+}
+.pinterest {
+  background: url('../images/pinterest.svg') center no-repeat;
+  padding-left: 0.7em;
+}
+.youtube {
+  background: url('../images/youtube.svg') center no-repeat;
+  padding-left: 0.2em;
+}
+.tumblr {
+  background: url('../images/tumblr.svg') center no-repeat;
+  padding-left: 1.2em;
+}
+.ello {
+  background: url('../images/ello.svg') center no-repeat;
+  padding-left: 1.2em;
+}
+.ello {
+  background: url('../images/ello.svg') center no-repeat;
+  padding-left: 1.2em;
+}
+.ebay {
+  background: url('../images/ebay.svg') center no-repeat;
+  padding-left: 1.2em;
+}
+.etsy {
+  background: url('../images/etsy.svg') center no-repeat;
+  padding-left: 1.2em;
+}
+.sketchfab {
+  background: url('../images/sketchfab.svg') center no-repeat;
+  padding-left: 1.2em;
+}
+.tumblr2 {
+  background: url('../images/tumblr2.svg') center no-repeat;
+  padding-left: 1.2em;
+}
+.tumblr3 {
+  background: url('../images/tumblr3.svg') center no-repeat;
+  padding-left: 1.2em;
+}
+.reddit {
+  background: url('../images/reddit.svg') center no-repeat;
+  padding-left: 1.2em;
+}
+.shopify {
+  background: url('../images/shopify.svg') center no-repeat;
+  padding-left: 1.2em;
+}
+
+
+
+
+
+
 
 .images {
   position: absolute;
