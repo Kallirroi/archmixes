@@ -11,80 +11,67 @@ class Icons extends React.Component {
 						<a href="http://www.instagram.com/archmixes/" target="_blank">
 						<div className="icon insta"> </div>
 						</a>
-						{/* <h6> instagram </h6> */}
 					</div>
 					<div className="one column rotate2"  style={{paddingLeft: '6em'}}>
 						<a href="https://twitter.com/archmixes" target="_blank">
 						<div className="icon twitter"> </div>
 						</a>
-						{/* <h6> twitter </h6> */}
 					</div>
 					<div className="one column rotate3" id="email" style={{paddingLeft: '6em'}}>
 					<a href="mailto:archmixes@gmail.com?Subject=Hello" target="_top">
 					<div className="icon email"> </div>
 					</a>
-					{/*  <h6> email </h6> */}
 					</div>
 					<div className="one column rotate2" id="pinterest" style={{paddingLeft: '6em'}}>
 					<a href="https://www.pinterest.com/amixes/?etslf=2407&eq=arc" target="_blank">
 					<div className="icon pinterest"> </div>
 					</a>
-					{/* <h6> pinterest </h6> */}
 					</div>
 					<div className="one-third column rotate1" id="youtube" style={{paddingLeft: '6em'}}>
 					<a href="https://www.youtube.com/channel/UC5hDO86UUlnEsX2c6c3b1ZA" target="_blank">
 					<div className="icon youtube"> </div>
 					</a>
-					{/*  <h6> youtube </h6> */}
 					</div>
 					<div className="one column rotate3" id="tumblr" style={{paddingLeft: '6em'}}>
 					<a href="http://archmixes.tumblr.com/" target="_blank">
 					<div className="icon tumblr"> </div>
 					</a>
-					{/*  <h6> tumblr </h6> */}
 					</div>
 					<div className="one column rotate4" id="ello" style={{paddingLeft: '6em'}}>
 					<a href="https://ello.co/archmixes" target="_blank">
 					<div className="icon ello"> </div>
 					</a>
-					{/*  <h6> ello </h6> */}
 					</div>
 					<div className="one-third column rotate4" id="ebay" style={{paddingLeft: '6em'}}>
 					<a href="http://www.ebay.com/usr/arcmixe_0" target="_blank">
 					<div className="icon ebay"> </div>
 					</a>
-					{/*  <h6> ebay </h6> */}
 					</div>
 					<div className="one column rotate3" style={{paddingLeft: '6em'}}>
 					<a href="https://www.etsy.com/shop/ArchMixes?ref=hdr_shop_menu" target="_blank">
 					<div className="icon etsy"> </div>
 					</a>
-					{/*  <h6> etsy </h6> */}
 					</div>
 					<div className="one column rotate4" style={{paddingLeft: '2em'}}>
 					<a href="http://sketchfab.com/samtous" target="_blank">
 					<div className="icon sketchfab"> </div>
 					</a>
-					{/*  <h6> sketchfab </h6> */}
 					</div>
 					<div className="one column rotate2" style={{paddingLeft: '6em'}}>
 					<a href="http://tab-pile.tumblr.com/" target="_blank">
 					<div className="icon tumblr2"> </div>
 					</a>
-					{/*  <h6> tab-pile </h6> */}
 					</div>
 					<div className="one column rotate2" style={{paddingLeft: '4em'}}>
 					<a href="https://archmixlist.tumblr.com/" target="_blank">
 					<div className="icon tumblr3"> </div>
 					</a>
-					{/*  <h6> tab-pile </h6> */}
 					</div>
 					<div className="one-half column rotate2" style={{paddingLeft: '6em'}}>
 					<a href="https://www.reddit.com/user/archmixes/" target="_blank">
 					<div className="icon reddit"> </div>
 					</a>
 					</div>
-					{/*  <h6> reddit </h6> */}
 					<div className="one column rotate2" style={{paddingLeft:'6em'}}>
 			        <a href="http://arch-mixes.myshopify.com/" target="_blank">
 			        <div className="icon shopify"> </div>

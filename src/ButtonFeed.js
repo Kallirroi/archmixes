@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './App.css';
 import './normalize.css';
 import './skeleton.css';
@@ -10,7 +11,7 @@ class ButtonFeed extends React.Component {
   }
 
   clicked() {
-    console.log('Feed')
+    console.log('Feed');
   }
 
 	render() {
