@@ -64,7 +64,7 @@ body { cursor: crosshair; }
   margin: 0 auto;
   z-index: 100;
   position: relative;
-  
+  border: 1px solid red;
 }
 
 .icon {
@@ -136,11 +136,18 @@ body { cursor: crosshair; }
 
 /* ------------------------------------------------IMAGES------------------------------------------------*/
 
-.Contentimages {
-  max-width: 960px;
+.ContentImages {
   margin: 0 auto;
-}
+  height: 0px;
+  border: 1px solid blue;
+} 
 
+.ContentImages-SVG{
+  margin: 0 auto;
+  z-index: 100;
+  position: relative;
+  border: 1px solid blue;
+}
 .images {
   position: absolute;
   opacity: 0.9;
@@ -180,6 +187,8 @@ body { cursor: crosshair; }
   margin: 0 auto;
   z-index: 100;
   position: relative;
+  border: 1px solid green;
+  padding-bottom: 20em;
 }
 
 #footer{

@@ -22,7 +22,7 @@ class App extends Component {
         <div className="container">
           <Title/>
           <Icons data={data} width={containerWidth} height={containerHeight/4}/>
-          <ContentImages/>
+          <ContentImages data={data} width={containerWidth} height={1.4*containerHeight}/>
           <Content/>
           <ContentFooter/>
         </div>
