@@ -7,8 +7,6 @@ class Contentimages extends React.Component {
 	render() {
 		return (
 			<div className="Contentimages">
-				{/*      BACKGROUND images       */}
-				{/*    NOTE FOR SAM:  edit size and positions of the images here in the 'style' section    */}
 				<div className="row">
 					<div className="images image1"> </div>
 					<div className="images image2"> </div>
