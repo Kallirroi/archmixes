@@ -19,9 +19,8 @@ const Feed = () => <div><Links /></div>;
 
 const Links = () =>
     <nav>
-      <Link to="/">Home</Link> <br/>
-      <Link to="live">Watch it live</Link> <br/>
-      <Link to="feed">Feed</Link>
+      <Link to="live"><ButtonYoutube/></Link> <br/>
+      <Link to="feed"><ButtonFeed/></Link>
     </nav>
 
 class App extends Component {
@@ -36,8 +35,6 @@ class App extends Component {
             <Route path="/feed" component={Feed}></Route>
           </Router>
 
-          <ButtonYoutube/>
-          <ButtonFeed/>
           <Title/>
           <Icons/>
           <ContentImages/>
