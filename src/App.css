@@ -145,7 +145,7 @@ body { cursor: crosshair; }
 
 /* ------------------------------------------------BUTTONS------------------------------------------------*/
 
-#buttonstylz1{
+#buttonstylz3{
   position:fixed;
   top: 1em;
   right:15em;
@@ -155,9 +155,19 @@ body { cursor: crosshair; }
   color: #0000ff;
   z-index:2000;
 }
-#buttonstylz2{
+#buttonstylz1{
   position:fixed;
   top: 5em;
+  right:15em;
+/*  margin-left: 80%;
+  margin-top: -20em;*/
+  border: 3px solid #0000ff;
+  color: #0000ff;
+  z-index:2000;
+}
+#buttonstylz2{
+  position:fixed;
+  top: 9em;
   right:15em;
 /*  margin-left: 80%;
   margin-top: -20em;*/
