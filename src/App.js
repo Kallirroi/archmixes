@@ -12,11 +12,12 @@ import './normalize.css';
 import './skeleton.css';
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
         <div className="container">
-          <ButtonYoutube/>
+          <ButtonYoutube onClick={this.clicked}/>
           <ButtonFeed/>
           <Title/>
           <Icons/>
