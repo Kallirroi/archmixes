@@ -7,9 +7,6 @@ class Contentimages extends React.Component {
 	render() {
 		return (
 			<div className="Contentimages">
-				{/*      BACKGROUND images       */}
-				{/*    NOTE FOR SAM:  edit size and positions of the images here in the 'style' section    */}
-				<div className="row">
 					<div className="images image1"> </div>
 					<div className="images image2"> </div>
 					<div className="images" src="images/bld3.png" style={{top: '10%', right: '-3em', width: 200}} />
@@ -30,7 +27,6 @@ class Contentimages extends React.Component {
 					<div className="images" src="images/bld18.png" style={{top: '80%', left: '-9em', width: 400}} />
 					<div className="images" src="images/bld19.png" style={{top: '94%', left: '-3em', width: 300}} />
 				</div>
-	    	</div>
 	    )
 	}
 }

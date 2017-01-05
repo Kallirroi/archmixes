@@ -30,10 +30,8 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .container {
   position: relative;
-  width: 100%;
-  max-width: 960px;
+  height: 100em;
   margin: 0 auto;
-  padding: 0 20px;
   box-sizing: border-box; }
 .column,
 .columns {
