@@ -41,19 +41,20 @@ class SvgRenderer extends Component {
 	// The largest node for each cluster.
 	var clusters = new Array(m);
 
-	var nodes = d3.range(n).map(function() {
+	var nodes = Shapes.map(function(element) {
 	  var i = Math.floor(Math.random() * m),
 	      r =  className==="Icons" ? 20 : 130,
 	      d = {
+	      	url: element.url,
+	      	className: element.className,
 	        cluster: i,
 	        radius: r,
 	        x: width/2  + width/2 * (Math.random() - 0.5),
-	        y: className==="Icons" ? height + 10 * (Math.random() - 1) : height/2 + height/2 * (Math.random() - 0.5)
+	        y: element.className==="Icons" ? height + 10 * (Math.random() - 1) : height/2 + height/2 * (Math.random() - 0.5)
 	      };
 	  if (!clusters[i] || (r > clusters[i].radius)) clusters[i] = d;
 	  return d;
 	});
-
 
 	var force = d3.forceSimulation()
 	  // cluster by section
@@ -67,15 +68,19 @@ class SvgRenderer extends Component {
 
 	var node = svg.selectAll("path")
 	      .data(nodes)
-	  .enter().append("path")
-	  	  .attr('d', function(d,i) { return Shapes[i].path})
-	  	  // .attr('d', function(d,i) {return Shapes[i].path  })
+	  .enter()
+	  	.append("path")
+	  	.attr('d', function(d,i) { return Shapes[i].path})
 	  .call(d3.drag()
 	      .on("start", dragstarted)
 	      .on("drag", dragged)
 	      .on("end", dragended));
 
-
+	svg.selectAll("path")
+	    .filter( (d) => d.className==="Icons")
+		.style("fill", "#00f")
+	  	.append("svg:a").attr("xlink:href", (d) => d.url)
+	  	.on('click', () => console.log('click'))
 
 	function layoutTick(e) {
 	  node
@@ -90,7 +95,6 @@ class SvgRenderer extends Component {
 	}
 
 	// Move d to be adjacent to the cluster node.
-	// from: https://bl.ocks.org/mbostock/7881887
 	function cluster () {
 	  var nodes,
 	    strength = 0.01;
