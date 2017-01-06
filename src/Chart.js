@@ -32,7 +32,7 @@ class SvgRenderer extends Component {
     let width = this.props.width;
     let height = this.props.height;
     let className = this.props.className;
-  	let padding = 30; // separation between same-color nodes
+  	let padding = 10; // separation between same-color nodes
     let svg = d3.select(this.ref).attr("width", width + margin) .attr("height", height + 2*margin)
 
 	var n = this.props.n, // total number of nodes
@@ -43,12 +43,12 @@ class SvgRenderer extends Component {
 
 	var nodes = d3.range(n).map(function() {
 	  var i = Math.floor(Math.random() * m),
-	      r = 40,
+	      r = 20,
 	      d = {
 	        cluster: i,
 	        radius: r,
-	        x: width / 2 * Math.random(),
-	        y: height * 0.8
+	        x: width/2  + width/2 * (Math.random() - 0.5),
+	        y: height+ 10 * (Math.random() - 0.5)
 	      };
 	  if (!clusters[i] || (r > clusters[i].radius)) clusters[i] = d;
 	  return d;
@@ -56,11 +56,9 @@ class SvgRenderer extends Component {
 
 
 	var force = d3.forceSimulation()
-	  // keep entire simulation balanced around screen center
-	  .force('center', d3.forceCenter(width/2 + Math.random() * 200, height * 2))
 	  // cluster by section
 	  .force('cluster', cluster()
-	    .strength(0.005))
+	    .strength(0))
 	  // apply collision with padding
 	  .force('collide', d3.forceCollide(d => d.radius + padding)
 	    .strength(0))
@@ -82,9 +80,9 @@ class SvgRenderer extends Component {
 	function layoutTick(e) {
 	  node
 	      .attr("transform", function(d) { 
-	      	let dx = (d.x > 0.8*width) || (d.x < 0.1*width) ? d.x/2 : d.x ; 
-	      	let dy =  (d.y > 0.8*height) || (d.y < 0.1*width) ? d.y/2 : d.y ;  
-	      	return `translate(${dx},${dy}) scale(0.5)`;
+	      	let dx = (d.x > width) || (d.x < 0) ? width/2 : d.x ; 
+	      	let dy =  (d.y > height) || (d.y < 0) ? height * 1.2: d.y ;  
+	      	return `translate(${dx},${dy}) scale(0.35)`;
 	      })
 
 	  force.force('collide').strength(1);
@@ -94,7 +92,7 @@ class SvgRenderer extends Component {
 	// from: https://bl.ocks.org/mbostock/7881887
 	function cluster () {
 	  var nodes,
-	    strength = 0.1;
+	    strength = 0.01;
 
 	  function force (alpha) {
 
