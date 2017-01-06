@@ -9,7 +9,7 @@ class Content extends React.Component {
 			<div className="Content">
 				{/*       MAIN TEXT SECTION         */}
 				<div className="row">
-					<div className="seven column" style={{paddingLeft: '10em', paddingRight: '10em', paddingTop: '5em'}}>
+					<div className="seven column" style={{paddingLeft: '10em', paddingRight: '10em', paddingTop: '0em'}}>
 					<p>Tweeting from your couch, in your sweats, can be an architectural act.</p>
 					<p>Architecture’s ability to serve and shape a public has been weakened by its disciplinary exclusivity and the privatization of public space. </p>
 					<p>Hope for architecture today is found, instead, in its ability to be shared online. There, its value is in its newfound velocity, intensity, and spread - an ability to “get around”. Attention is a currency and the image, a visual byte that circulates, has already replaced the building in space, as such. Architecture is on and of the web, and it can shape public there.</p>
