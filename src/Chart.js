@@ -32,7 +32,7 @@ class SvgRenderer extends Component {
     let width = this.props.width;
     let height = this.props.height;
     let className = this.props.className;
-  	let padding = 10; // separation between same-color nodes
+  	let padding =  className==="Icons" ? 10 : 20;
     let svg = d3.select(this.ref).attr("width", width + margin) .attr("height", height + 2*margin)
 
 	var n = this.props.n, // total number of nodes
@@ -43,7 +43,7 @@ class SvgRenderer extends Component {
 
 	var nodes = d3.range(n).map(function() {
 	  var i = Math.floor(Math.random() * m),
-	      r = 20,
+	      r =  className==="Icons" ? 20 : 130,
 	      d = {
 	        cluster: i,
 	        radius: r,
@@ -81,8 +81,9 @@ class SvgRenderer extends Component {
 	  node
 	      .attr("transform", function(d) { 
 	      	let dx = (d.x > width) || (d.x < 0) ? width/2 : d.x ; 
-	      	let dy =  (d.y > height) || (d.y < 0) ? height : d.y ;  
-	      	return `translate(${dx},${dy}) scale(0.35)`;
+	      	let dy =  (d.y > height) || (d.y < 0) ? height : d.y ; 
+	      	let scale =  className==="Icons" ? 0.35 : 2;
+	      	return `translate(${dx},${dy}) scale(${scale})`;
 	      })
 
 	  force.force('collide').strength(1);
