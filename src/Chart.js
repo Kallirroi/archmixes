@@ -35,8 +35,7 @@ class SvgRenderer extends Component {
   	let padding =  className==="Icons" ? 10 : 20;
     let svg = d3.select(this.ref).attr("width", width + margin) .attr("height", height + 2*margin)
 
-	var n = this.props.n, // total number of nodes
-	    m = 1; // number of distinct clusters
+	var m = 1; // number of distinct clusters
 
 	// The largest node for each cluster.
 	var clusters = new Array(m);
@@ -70,6 +69,7 @@ class SvgRenderer extends Component {
 	      .data(nodes)
 	  .enter()
 	  	.append("path")
+	 	.classed("shape", true)
 	  	.attr('d', function(d,i) { return Shapes[i].path})
 	  .call(d3.drag()
 	      .on("start", dragstarted)
@@ -79,8 +79,9 @@ class SvgRenderer extends Component {
 	svg.selectAll("path")
 	    .filter( (d) => d.className==="Icons")
 		.style("fill", "#00f")
-	  	.append("svg:a").attr("xlink:href", (d) => d.url)
-	  	.on('click', () => console.log('click'))
+	  	.append("a").attr("xlink:href", (d) => d.url);
+
+	svg.selectAll('path.shape').on('click', (d) => window.open(d.url));
 
 	function layoutTick(e) {
 	  node
