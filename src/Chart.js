@@ -38,7 +38,6 @@ class SvgRenderer extends Component {
 	let clusters = new Array(m);
 
 	let ShapesSubset = Shapes.filter( (element) => element.className===this.props.className);
-	console.log(ShapesSubset);
 	let nodes = ShapesSubset.map(function(element) {
 	  	let i = 1,
 	      r =  element.className==="Icons" ? 20 : 130,
@@ -48,37 +47,39 @@ class SvgRenderer extends Component {
 	        cluster: i,
 	        radius: r,
 	        x: width/2  + width/2 * (Math.random() - 0.5),
-	        y: element.className==="Icons" ? height + 10 * (Math.random() - 1) : height/2 + height/2 * (Math.random() - 0.5)
+	        y: element.className==="Icons" ? height * 0.95 + 10 * (Math.random() - 1) : height/2 + height/2 * (Math.random() - 0.5)
 	      };
 	  if (!clusters[i] || (r > clusters[i].radius)) clusters[i] = d;
 	  return d;
 	});
 
 	let force = d3.forceSimulation()
-	  // cluster by section
-	  .force('cluster', cluster()
-	    .strength(0))
-	  // apply collision with padding
-	  .force('collide', d3.forceCollide(d => d.radius + padding)
-	    .strength(0))
-	  .on('tick', layoutTick)
+		.force('cluster', cluster().strength(0))
+		.force('collide', d3.forceCollide(d => d.radius + padding).strength(0))
+		.on('tick', layoutTick)
 		.nodes(nodes);
 
 	let node = svg.selectAll("path")
-	      .data(nodes)
-	  .enter()
-	  	.append("path")
-	  	.attr('d', function(d,i) { return ShapesSubset[i].path})
-	  .call(d3.drag()
-	      .on("start", dragstarted)
-	      .on("drag", dragged)
-	      .on("end", dragended));
+		.data(nodes)
+		.enter()
+		.append("path")
+		.attr('d', function(d,i) { return ShapesSubset[i].path})
+		.style("fill", "#00f")
+		.call(d3.drag()
+		.on("start", dragstarted)
+		.on("drag", dragged)
+		.on("end", dragended));
 
 	svg.selectAll("path")
 	    .filter( (d) => d.className==="Icons")
 	 	.classed("icons", true)
-		.style("fill", "#00f")
-	  	.append("a").attr("xlink:href", (d) => d.url);
+	  	.append("a").attr("xlink:href", (d) => d.url);	
+
+	svg.selectAll("path")
+	    .filter( (d) => d.className==="Images")
+	 	.classed("images", true)
+		.style("opacity", "0.5")
+		.attr("z-index", "-1")
 
 	svg.selectAll('path.icons')
 		.on('click', (d) => window.open(d.url));
@@ -88,7 +89,7 @@ class SvgRenderer extends Component {
 	      .attr("transform", function(d) { 
 	      	let dx = (d.x > width) || (d.x < 0) ? width/2 : d.x ; 
 	      	let dy =  (d.y > height) || (d.y < 0) ? height : d.y ; 
-	      	let scale =  d.className==="Icons" ? 0.35 : 2;
+	      	let scale =  d.className==="Icons" ? 0.35 : 3;
 	      	return `translate(${dx},${dy}) scale(${scale})`;
 	      })
 
