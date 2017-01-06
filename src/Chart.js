@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
+import Shapes from './Shapes';
 
 
 class SvgRenderer extends Component {
@@ -35,22 +36,19 @@ class SvgRenderer extends Component {
     let width = this.props.width;
     let height = this.props.height;
     
-  	let padding = 1.5, // separation between same-color nodes
+  	let padding = 10 * this.props.n, // separation between same-color nodes
     maxRadius = 20;
 
 
 	var n = this.props.n, // total number of nodes
 	    m = 1; // number of distinct clusters
 
-	var color = d3.scaleSequential(d3.interpolateRainbow)
-	    .domain(d3.range(m));
-
 	// The largest node for each cluster.
 	var clusters = new Array(m);
 
 	var nodes = d3.range(n).map(function() {
 	  var i = Math.floor(Math.random() * m),
-	      r = Math.sqrt((i + 1) / m * -Math.log(Math.random())) * maxRadius,
+	      r = 5,
 	      d = {
 	        cluster: i,
 	        radius: r,
@@ -64,34 +62,35 @@ class SvgRenderer extends Component {
 
 	var force = d3.forceSimulation()
 	  // keep entire simulation balanced around screen center
-	  .force('center', d3.forceCenter(width/2, height/2))
-
+	  .force('center', d3.forceCenter(width/3, height))
 	  // cluster by section
 	  .force('cluster', cluster()
-	    .strength(0.2))
-
+	    .strength(0.1))
 	  // apply collision with padding
 	  .force('collide', d3.forceCollide(d => d.radius + padding)
 	    .strength(0))
-
 	  .on('tick', layoutTick)
 		.nodes(nodes);
 
-	var node = svg.selectAll("circle")
-	    .data(nodes)
-	  .enter().append("circle")
-	    .style("fill", function(d) { return color(d.cluster/10); })
+	var node = svg.selectAll("path")
+	      .data(nodes)
+	  .enter().append("path")
+	  	  .attr('d', (d) => Shapes[1].path)
 	  .call(d3.drag()
 	      .on("start", dragstarted)
 	      .on("drag", dragged)
 	      .on("end", dragended));
 
 
+
 	function layoutTick(e) {
 	  node
-	      .attr("cx", function(d) { return d.x; })
-	      .attr("cy", function(d) { return d.y; })
-	      .attr("r", function(d) { return d.radius; });
+	      .attr("transform", function(d) { 
+	      	let dx = (d.x > width) || (d.x < 100) ? d.x/2 : d.x ; 
+	      	let dy =  (d.y > height) || (d.y < 0) ? d.y/2 : d.y ;  
+	      	return `translate(${dx},${dy})`;
+	      })
+
 	  force.force('collide').strength(1);
 	}
 
