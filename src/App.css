@@ -13,8 +13,9 @@ body { cursor: crosshair; }
 .Icons {
   margin: 0 auto;
   position: relative;
+  display: block;
 }
-svg {
+svg{
   margin: 0 auto;
   z-index: 100;
   position: relative;
@@ -32,12 +33,18 @@ svg {
 
 /* ------------------------------------------------Title------------------------------------------------*/
 
+.title {
+  position: relative;
+  border: 1px solid blue;
+  display: block;
+}
 
 .title  > h1{
   position:fixed;
   top: 1em;
   left: 43vw;
   font-size:3em;
+  border: 1px solid blue;
 }
 
 /* ------------------------------------------------FOOTER------------------------------------------------*/

@@ -7,10 +7,6 @@ class SvgRenderer extends Component {
   constructor() {
     super();
     this.onRef = ref => this.ref = ref;
-    this.onDrag = d3.drag().on("drag", (d) => {
-      d.x = d3.event.x;
-      d.y = d3.event.y;
-    });
     this.renderSvg = this.renderSvg.bind(this);
   }
 
@@ -33,10 +29,11 @@ class SvgRenderer extends Component {
 
     /*----------------------------- Main Vis --------------------*/
     let svg = d3.select(this.ref);
+    var margin = 100;
     let width = this.props.width;
     let height = this.props.height;
     let className = this.props.className;
-  	let padding = 10 * this.props.n; // separation between same-color nodes
+  	let padding = 20; // separation between same-color nodes
 
 	var n = this.props.n, // total number of nodes
 	    m = 1; // number of distinct clusters
@@ -46,12 +43,12 @@ class SvgRenderer extends Component {
 
 	var nodes = d3.range(n).map(function() {
 	  var i = Math.floor(Math.random() * m),
-	      r = 5,
+	      r = 20,
 	      d = {
 	        cluster: i,
 	        radius: r,
-	        x: Math.cos(i / m * 2 * Math.PI) * 100 + width / 2 + Math.random(),
-	        y: Math.sin(i / m * 2 * Math.PI) * 100 + height / 2 + Math.random()
+	        x: width / 2 * Math.random(),
+	        y: height /2
 	      };
 	  if (!clusters[i] || (r > clusters[i].radius)) clusters[i] = d;
 	  return d;
@@ -60,10 +57,10 @@ class SvgRenderer extends Component {
 
 	var force = d3.forceSimulation()
 	  // keep entire simulation balanced around screen center
-	  .force('center', d3.forceCenter(width/2, height/2))
+	  .force('center', d3.forceCenter(width/2 + Math.random() * 200, height * 1.2))
 	  // cluster by section
 	  .force('cluster', cluster()
-	    .strength(0.1))
+	    .strength(0.005))
 	  // apply collision with padding
 	  .force('collide', d3.forceCollide(d => d.radius + padding)
 	    .strength(0))
@@ -73,7 +70,7 @@ class SvgRenderer extends Component {
 	var node = svg.selectAll("path")
 	      .data(nodes)
 	  .enter().append("path")
-	  	  .attr('d', function(d,i) { return className==='Icons'?  Shapes[i].path : Shapes[i+2].path; })
+	  	  .attr('d', function(d,i) { return className==='Icons'?  Shapes[i].path : Shapes[i].path; })
 	  	  // .attr('d', function(d,i) {return Shapes[i].path  })
 	  .call(d3.drag()
 	      .on("start", dragstarted)
