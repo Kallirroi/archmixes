@@ -35,10 +35,8 @@ class SvgRenderer extends Component {
     let svg = d3.select(this.ref);
     let width = this.props.width;
     let height = this.props.height;
-    
-  	let padding = 10 * this.props.n, // separation between same-color nodes
-    maxRadius = 20;
-
+    let className = this.props.className;
+  	let padding = 10 * this.props.n; // separation between same-color nodes
 
 	var n = this.props.n, // total number of nodes
 	    m = 1; // number of distinct clusters
@@ -62,7 +60,7 @@ class SvgRenderer extends Component {
 
 	var force = d3.forceSimulation()
 	  // keep entire simulation balanced around screen center
-	  .force('center', d3.forceCenter(width/3, height))
+	  .force('center', d3.forceCenter(width/2, height/2))
 	  // cluster by section
 	  .force('cluster', cluster()
 	    .strength(0.1))
@@ -75,7 +73,8 @@ class SvgRenderer extends Component {
 	var node = svg.selectAll("path")
 	      .data(nodes)
 	  .enter().append("path")
-	  	  .attr('d', (d) => Shapes[1].path)
+	  	  .attr('d', function(d,i) { return className==='Icons'?  Shapes[i].path : Shapes[i+2].path; })
+	  	  // .attr('d', function(d,i) {return Shapes[i].path  })
 	  .call(d3.drag()
 	      .on("start", dragstarted)
 	      .on("drag", dragged)
@@ -86,9 +85,9 @@ class SvgRenderer extends Component {
 	function layoutTick(e) {
 	  node
 	      .attr("transform", function(d) { 
-	      	let dx = (d.x > width) || (d.x < 100) ? d.x/2 : d.x ; 
-	      	let dy =  (d.y > height) || (d.y < 0) ? d.y/2 : d.y ;  
-	      	return `translate(${dx},${dy})`;
+	      	let dx = (d.x > 0.8*width) || (d.x < 0.1*width) ? d.x/2 : d.x ; 
+	      	let dy =  (d.y > 0.8*height) || (d.y < 0.1*width) ? d.y/2 : d.y ;  
+	      	return `translate(${dx},${dy}) scale(0.5)`;
 	      })
 
 	  force.force('collide').strength(1);

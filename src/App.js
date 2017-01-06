@@ -19,8 +19,8 @@ class App extends Component {
       <div className="App">
         <div className="container">
           <Title/>
-          <Chart n={10} className={"Icons"} width={containerWidth} height={containerHeight/4}/>
-          <Chart n={20} className={"ContentImages"} width={containerWidth} height={1.4*containerHeight}/>
+          <Chart n={2} className={"Icons"} width={containerWidth} height={containerHeight/4}/>
+          <Chart n={4} className={"Images"} width={containerWidth} height={1.4*containerHeight}/>
           <Content/>
           <ContentFooter/>
         </div>

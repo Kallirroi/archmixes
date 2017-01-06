@@ -11,12 +11,10 @@ body { cursor: crosshair; }
 /* ------------------------------------------------ICONS------------------------------------------------*/
 
 .Icons {
-  max-width: 960px;
   margin: 0 auto;
   position: relative;
 }
 svg {
-  max-width: 960px;
   margin: 0 auto;
   z-index: 100;
   position: relative;
@@ -24,15 +22,9 @@ svg {
   border: 1px solid red;
 }
 
-.icon {
-  width: 40px;
-  height: 40px;
-}
-
-
 /* ------------------------------------------------IMAGES------------------------------------------------*/
 
-.ContentImages {
+.Images {
   margin: 0 auto;
   height: 0px;
   border: 1px solid blue;
