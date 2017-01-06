@@ -6,6 +6,10 @@ class SvgRenderer extends Component {
   constructor() {
     super();
     this.onRef = ref => this.ref = ref;
+    this.onDrag = d3.drag().on("drag", (d) => {
+      d.x = d3.event.x;
+      d.y = d3.event.y;
+    });
     this.renderSvg = this.renderSvg.bind(this);
   }
 
@@ -15,8 +19,8 @@ class SvgRenderer extends Component {
 
   render() {
     return (
-      <div className="ContentImages">
-        <svg className="ContentImages-SVG" width={this.props.width} height={this.props.height} ref={this.onRef} />
+      <div className={this.props.className}>
+        <svg width={this.props.width} height={this.props.height} ref={this.onRef} />
       </div>
     );
   }
@@ -35,7 +39,7 @@ class SvgRenderer extends Component {
     maxRadius = 20;
 
 
-	var n = 10, // total number of nodes
+	var n = this.props.n, // total number of nodes
 	    m = 1; // number of distinct clusters
 
 	var color = d3.scaleSequential(d3.interpolateRainbow)
@@ -82,13 +86,6 @@ class SvgRenderer extends Component {
 	      .on("drag", dragged)
 	      .on("end", dragended));
 
-	// ramp up collision strength to provide smooth transition
-	// var transitionTime = 3000;
-	// var t = d3.timer(function (elapsed) {
-	//   var dt = elapsed / transitionTime;
-	//   force.force('collide').strength(Math.pow(dt, 2) * 0.7);
-	//   if (dt >= 1.0) t.stop();
-	// });
 
 	function layoutTick(e) {
 	  node
@@ -118,7 +115,7 @@ class SvgRenderer extends Component {
 	        l = Math.sqrt(x * x + y * y),
 	        r = d.radius + cluster.radius;
 
-	      if (l != r) {
+	      if (l !== r) {
 	        l = (l - r) / l * alpha;
 	        d.x -= x *= l;
 	        d.y -= y *= l;
@@ -160,12 +157,9 @@ class SvgRenderer extends Component {
 
 	}
 
-
-
 	}
 
 }
-
 
 
 export default SvgRenderer;

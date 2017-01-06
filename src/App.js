@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import * as d3 from 'd3';
 
 import Title from './Title';
-import Icons from './Icons';
-import ContentImages from './ContentImages';
+import Chart from './Chart';
 import Content from './Content';
 import ContentFooter from './ContentFooter';
 
@@ -20,8 +19,8 @@ class App extends Component {
       <div className="App">
         <div className="container">
           <Title/>
-          <Icons width={containerWidth} height={containerHeight/4}/>
-          <ContentImages width={containerWidth} height={1.4*containerHeight}/>
+          <Chart n={10} className={"Icons"} width={containerWidth} height={containerHeight/4}/>
+          <Chart n={20} className={"ContentImages"} width={containerWidth} height={1.4*containerHeight}/>
           <Content/>
           <ContentFooter/>
         </div>

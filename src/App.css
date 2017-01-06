@@ -35,7 +35,7 @@ body { cursor: crosshair; }
   max-width: 960px;
   margin: 0 auto;
 }
-.Icons-SVG{
+svg.Icons{
   max-width: 960px;
   margin: 0 auto;
   z-index: 100;
