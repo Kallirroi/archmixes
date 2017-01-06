@@ -28,7 +28,7 @@ class SvgRenderer extends Component {
     }
 
     /*----------------------------- Main Vis --------------------*/
-    var margin = 50;
+    var margin = 30;
     let width = this.props.width;
     let height = this.props.height;
     let className = this.props.className;
@@ -48,7 +48,7 @@ class SvgRenderer extends Component {
 	        cluster: i,
 	        radius: r,
 	        x: width/2  + width/2 * (Math.random() - 0.5),
-	        y: height+ 10 * (Math.random() - 0.5)
+	        y: className==="Icons" ? height + 10 * (Math.random() - 1) : height/2 + height/2 * (Math.random() - 0.5)
 	      };
 	  if (!clusters[i] || (r > clusters[i].radius)) clusters[i] = d;
 	  return d;
@@ -68,7 +68,7 @@ class SvgRenderer extends Component {
 	var node = svg.selectAll("path")
 	      .data(nodes)
 	  .enter().append("path")
-	  	  .attr('d', function(d,i) { return className==='Icons'?  Shapes[i].path : Shapes[i].path; })
+	  	  .attr('d', function(d,i) { return Shapes[i].path})
 	  	  // .attr('d', function(d,i) {return Shapes[i].path  })
 	  .call(d3.drag()
 	      .on("start", dragstarted)
@@ -81,7 +81,7 @@ class SvgRenderer extends Component {
 	  node
 	      .attr("transform", function(d) { 
 	      	let dx = (d.x > width) || (d.x < 0) ? width/2 : d.x ; 
-	      	let dy =  (d.y > height) || (d.y < 0) ? height * 1.2: d.y ;  
+	      	let dy =  (d.y > height) || (d.y < 0) ? height : d.y ;  
 	      	return `translate(${dx},${dy}) scale(0.35)`;
 	      })
 
