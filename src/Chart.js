@@ -28,21 +28,20 @@ class SvgRenderer extends Component {
     }
 
     /*----------------------------- Main Vis --------------------*/
-    var margin = 30;
+    let margin = 30;
     let width = this.props.width;
     let height = this.props.height;
-    let className = this.props.className;
-  	let padding =  className==="Icons" ? 10 : 20;
-    let svg = d3.select(this.ref).attr("width", width + margin) .attr("height", height + 2*margin)
+    let svg = d3.select(this.ref).attr("width", width + margin) .attr("height", height + 2*margin);
 
-	var m = 1; // number of distinct clusters
+  	let padding =  this.props.className === "Icons" ?  10 :  20;
+	let m = 1; // number of distinct clusters
+	let clusters = new Array(m);
 
-	// The largest node for each cluster.
-	var clusters = new Array(m);
-
-	var nodes = Shapes.map(function(element) {
-	  var i = Math.floor(Math.random() * m),
-	      r =  className==="Icons" ? 20 : 130,
+	let ShapesSubset = Shapes.filter( (element) => element.className===this.props.className);
+	console.log(ShapesSubset);
+	let nodes = ShapesSubset.map(function(element) {
+	  	let i = 1,
+	      r =  element.className==="Icons" ? 20 : 130,
 	      d = {
 	      	url: element.url,
 	      	className: element.className,
@@ -55,7 +54,7 @@ class SvgRenderer extends Component {
 	  return d;
 	});
 
-	var force = d3.forceSimulation()
+	let force = d3.forceSimulation()
 	  // cluster by section
 	  .force('cluster', cluster()
 	    .strength(0))
@@ -65,12 +64,11 @@ class SvgRenderer extends Component {
 	  .on('tick', layoutTick)
 		.nodes(nodes);
 
-	var node = svg.selectAll("path")
+	let node = svg.selectAll("path")
 	      .data(nodes)
 	  .enter()
 	  	.append("path")
-	 	.classed("shape", true)
-	  	.attr('d', function(d,i) { return Shapes[i].path})
+	  	.attr('d', function(d,i) { return ShapesSubset[i].path})
 	  .call(d3.drag()
 	      .on("start", dragstarted)
 	      .on("drag", dragged)
@@ -78,17 +76,19 @@ class SvgRenderer extends Component {
 
 	svg.selectAll("path")
 	    .filter( (d) => d.className==="Icons")
+	 	.classed("icons", true)
 		.style("fill", "#00f")
 	  	.append("a").attr("xlink:href", (d) => d.url);
 
-	svg.selectAll('path.shape').on('click', (d) => window.open(d.url));
+	svg.selectAll('path.icons')
+		.on('click', (d) => window.open(d.url));
 
 	function layoutTick(e) {
 	  node
 	      .attr("transform", function(d) { 
 	      	let dx = (d.x > width) || (d.x < 0) ? width/2 : d.x ; 
 	      	let dy =  (d.y > height) || (d.y < 0) ? height : d.y ; 
-	      	let scale =  className==="Icons" ? 0.35 : 2;
+	      	let scale =  d.className==="Icons" ? 0.35 : 2;
 	      	return `translate(${dx},${dy}) scale(${scale})`;
 	      })
 
@@ -97,7 +97,7 @@ class SvgRenderer extends Component {
 
 	// Move d to be adjacent to the cluster node.
 	function cluster () {
-	  var nodes,
+	  let nodes,
 	    strength = 0.01;
 
 	  function force (alpha) {
@@ -106,7 +106,7 @@ class SvgRenderer extends Component {
 	    alpha *= strength * alpha;
 
 	    nodes.forEach(function(d) {
-				var cluster = clusters[d.cluster];
+				let cluster = clusters[d.cluster];
 	    	if (cluster === d) return;
 
 	      let x = d.x - cluster.x,
