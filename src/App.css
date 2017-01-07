@@ -1,4 +1,6 @@
-body { cursor: crosshair; }
+body { 
+  cursor: crosshair; 
+}
 
 .container {
   position: relative;
@@ -62,6 +64,7 @@ svg.Images{
   padding-bottom: 20em;
   z-index: 1;
 }
+
 
 #footer{
  position: absolute;

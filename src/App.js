@@ -18,7 +18,7 @@ class App extends Component {
     return (  
       <div className="App">
         <div className="container">
-          <Chart className={"Images"} width={windowWidth} height={windowHeight * 1.4}/>
+          <Chart className={"Images"} width={windowWidth} height={windowHeight}/>
           <Title/>
           <Chart className={"Icons"} width={windowWidth} height={0.2 * windowHeight}/>
           <Content/>

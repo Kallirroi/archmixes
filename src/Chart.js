@@ -40,15 +40,15 @@ class SvgRenderer extends Component {
 	let ShapesSubset = Shapes.filter( (element) => element.className===this.props.className);
 	let nodes = ShapesSubset.map(function(element) {
 	  	let i = 1,
-	      r =  element.className==="Icons" ? 20 : 100,
+	      r =  element.className==="Icons" ? 40 : 90,
 	      d = {
 	      	url: element.url,
 	      	className: element.className,
 	        cluster: i,
 	        radius: r,
 	        pathToImage: element.pathToImage,
-	        x: element.className==="Icons" ? width/2  + width/2 * (Math.random() - 0.5):  width/2 + width* (Math.random() - 0.5),
-	        y: element.className==="Icons" ? height * 0.95 + 10 * (Math.random() - 0.5) : height/2 + height/2 * (Math.random() - 1)
+	        x: element.className==="Icons" ? width/2  + 100* (Math.random() - 0.5):  width/2 + width* (Math.random() - 0.5),
+	        y: element.className==="Icons" ? height * 0.95 + 10 * (Math.random() - 1) : height/2 + height/2 * (Math.random() - 1)
 	      };
 	  if (!clusters[i] || (r > clusters[i].radius)) clusters[i] = d;
 	  return d;
@@ -57,6 +57,7 @@ class SvgRenderer extends Component {
 	let force = d3.forceSimulation()
 		.force('cluster', cluster().strength(0))
 		.force('collide', d3.forceCollide(d => d.radius + padding).strength(0))
+		.force('Y', d3.forceY((d) =>  d.className==="Icons" ? height : d.y))
 		.force('repel', d3.forceManyBody().strength(-100))
 		.on('tick', layoutTick)
 		.nodes(nodes);
@@ -65,7 +66,6 @@ class SvgRenderer extends Component {
 		.data(nodes)
 		.enter()
 		.append("svg:image")
-		// .attr('d', function(d,i) { return ShapesSubset[i].path})
 		.attr('xlink:href', (d) => d.pathToImage)
 		.attr('height', '10em')
 		.attr('width', '10em')
@@ -83,7 +83,7 @@ class SvgRenderer extends Component {
 
 	svg.selectAll("image")
 	    .filter( (d) => d.className==="Images")
-		.style("opacity", "0.6");
+		.style("opacity", "0.5");
 
 	svg.selectAll('image.icons')
 		.on('click', (d) => window.open(d.url));
@@ -93,22 +93,12 @@ class SvgRenderer extends Component {
 	  .enter().append("svg:circle")
 	    .attr("r", "2")
 
-	let root = nodes[0];
-	root.radius = 0;
-	root.fixed = true;
-
-	svg.on("mousemove", function() {
-		  root.px = d3.event.x;
-		  root.py = d3.event.y;
-		  force.restart();
-		});
-
 
 	function layoutTick(e) {
 	  node
 	      .attr("transform", function(d) { 
 	      	let dx = (d.x > width) || (d.x < 0) ? width/2 : d.x ; 
-	      	let dy =  (d.y > height) || (d.y < 0) ? height : d.y ; 
+	      	let dy =  (d.y > height) || (d.y < 0) ? height * 0.8: d.y ; 
 	      	let scale =  d.className==="Icons" ? 0.25 : 2.5;
 	      	return d.className==="Icons" ? `translate(${dx},${dy}) scale(${scale})` : `translate(${dx},${d.y}) scale(${scale})`;
 	      })
