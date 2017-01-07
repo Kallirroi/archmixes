@@ -31,7 +31,7 @@ class SvgRenderer extends Component {
     let margin = this.props.className === "Icons" ? 30 : 0;
     let width = this.props.width;
     let height = this.props.height;
-    let svg = d3.select(this.ref).attr("width", width + margin) .attr("height", height + 2*margin);
+    let svg = d3.select(this.ref).attr("width", width) .attr("height", height + 2*margin);
 
   	let padding =  this.props.className === "Icons" ?  10 :  20;
 	let m = 1; // number of distinct clusters
@@ -40,14 +40,14 @@ class SvgRenderer extends Component {
 	let ShapesSubset = Shapes.filter( (element) => element.className===this.props.className);
 	let nodes = ShapesSubset.map(function(element) {
 	  	let i = 1,
-	      r =  element.className==="Icons" ? 20 : 130,
+	      r =  element.className==="Icons" ? 20 : 90,
 	      d = {
 	      	url: element.url,
 	      	className: element.className,
 	        cluster: i,
 	        radius: r,
-	        x: width/2  + width/2 * (Math.random() - 0.5),
-	        y: element.className==="Icons" ? height * 0.95 + 10 * (Math.random() - 1) : height/2 + height/2 * (Math.random() - 0.5)
+	        x: element.className==="Icons" ? width/2  + width/2 * (Math.random() - 0.5):  width/2 + width/2* (Math.random() - 0.5),
+	        y: element.className==="Icons" ? height * 0.95 + 10 * (Math.random() - 0.5) : height/2 + height/2 * (Math.random() - 0.5)
 	      };
 	  if (!clusters[i] || (r > clusters[i].radius)) clusters[i] = d;
 	  return d;
@@ -78,7 +78,7 @@ class SvgRenderer extends Component {
 	svg.selectAll("path")
 	    .filter( (d) => d.className==="Images")
 	 	.classed("images", true)
-		.style("opacity", "0.5")
+		.style("opacity", "0.2")
 		.attr("z-index", "-1")
 
 	svg.selectAll('path.icons')
