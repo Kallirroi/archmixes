@@ -4,6 +4,7 @@ body { cursor: crosshair; }
   position: relative;
   margin: 0 auto;
   box-sizing: border-box; 
+  height: 150em;
   background: linear-gradient(to bottom, #FFDCF9, #DBFFFF);
 }
 
@@ -20,7 +21,7 @@ svg.Icons{
   display: block;
   border: 1px solid red;
 }
-path.icons:hover {
+image.icons:hover {
   cursor: pointer;
 }
 
@@ -28,11 +29,11 @@ path.icons:hover {
 
 .Images {
   margin: 0 auto;
+  position: fixed;
   height: 0px;
 } 
 svg.Images{
   margin: 0 auto;
-  position: relative;
   display: block;
   border: 1px solid red;
 }
@@ -47,7 +48,9 @@ svg.Images{
   position:fixed;
   top: 1em;
   left: 43vw;
-  font-size:3em;
+  font-size:2.5em;
+  font-weight: 400;
+  letter-spacing: 0.03em;
 }
 
 /* ------------------------------------------------FOOTER------------------------------------------------*/
@@ -57,7 +60,7 @@ svg.Images{
   margin: 0 auto;
   position: relative;
   padding-bottom: 20em;
-  z-index: 0;
+  z-index: 1;
 }
 
 #footer{

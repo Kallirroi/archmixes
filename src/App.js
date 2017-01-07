@@ -12,15 +12,15 @@ import './skeleton.css';
 
 class App extends Component {
   render() {
-    const containerWidth = window.innerWidth;
-    const containerHeight = window.innerHeight;
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
 
-    return (
+    return (  
       <div className="App">
         <div className="container">
+          <Chart className={"Images"} width={windowWidth} height={windowHeight * 1.4}/>
           <Title/>
-          <Chart n={11} className={"Icons"} width={containerWidth} height={0.2 * containerHeight}/>
-          <Chart n={1} className={"Images"} width={containerWidth} height={1.4 * containerHeight}/>
+          <Chart className={"Icons"} width={windowWidth} height={0.2 * windowHeight}/>
           <Content/>
           <ContentFooter/>
         </div>

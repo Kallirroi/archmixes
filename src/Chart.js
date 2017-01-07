@@ -39,15 +39,15 @@ class SvgRenderer extends Component {
 	let ShapesSubset = Shapes.filter( (element) => element.className===this.props.className);
 	let nodes = ShapesSubset.map(function(element) {
 	  	let i = 1,
-	      r =  element.className==="Icons" ? 20 : 90,
+	      r =  element.className==="Icons" ? 20 : 100,
 	      d = {
 	      	url: element.url,
 	      	className: element.className,
 	        cluster: i,
 	        radius: r,
 	        pathToImage: element.pathToImage,
-	        x: element.className==="Icons" ? width/2  + width/2 * (Math.random() - 0.5):  width/2 + width/2* (Math.random() - 0.5),
-	        y: element.className==="Icons" ? height * 0.95 + 10 * (Math.random() - 0.5) : height/2 + height/2 * (Math.random() - 0.5)
+	        x: element.className==="Icons" ? width/2  + width/2 * (Math.random() - 0.5):  width/2 + width* (Math.random() - 0.5),
+	        y: element.className==="Icons" ? height * 0.95 + 10 * (Math.random() - 0.5) : height/10 + height/2 * (Math.random() - 1)
 	      };
 	  if (!clusters[i] || (r > clusters[i].radius)) clusters[i] = d;
 	  return d;
@@ -74,17 +74,16 @@ class SvgRenderer extends Component {
 		.on("drag", dragged)
 		.on("end", dragended));
 
-	svg.selectAll("path")
+	svg.selectAll("image")
 	    .filter( (d) => d.className==="Icons")
 	 	.classed("icons", true)
 	  	.append("a").attr("xlink:href", (d) => d.url);	
 
-	svg.selectAll("path")
+	svg.selectAll("image")
 	    .filter( (d) => d.className==="Images")
-	 	.classed("images", true)
-		.style("opacity", "0.2");
+		.style("opacity", "0.6");
 
-	svg.selectAll('path.icons')
+	svg.selectAll('image.icons')
 		.on('click', (d) => window.open(d.url));
 
 	function layoutTick(e) {
@@ -92,8 +91,8 @@ class SvgRenderer extends Component {
 	      .attr("transform", function(d) { 
 	      	let dx = (d.x > width) || (d.x < 0) ? width/2 : d.x ; 
 	      	let dy =  (d.y > height) || (d.y < 0) ? height : d.y ; 
-	      	let scale =  d.className==="Icons" ? 0.35 : 3;
-	      	return `translate(${dx},${dy}) scale(${scale})`;
+	      	let scale =  d.className==="Icons" ? 0.25 : 2.5;
+	      	return d.className==="Icons" ? `translate(${dx},${dy}) scale(${scale})` : `translate(${dx},${d.y}) scale(${scale})`;
 	      })
 
 	  force.force('collide').strength(1);
