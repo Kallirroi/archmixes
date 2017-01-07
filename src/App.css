@@ -4,7 +4,7 @@ body { cursor: crosshair; }
   position: relative;
   margin: 0 auto;
   box-sizing: border-box; 
-  background-color: #fff;
+  background: linear-gradient(to bottom, #FFDCF9, #DBFFFF);
   border: 1px solid yellow;
 }
 

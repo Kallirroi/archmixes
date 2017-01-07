@@ -28,7 +28,7 @@ class SvgRenderer extends Component {
     }
 
     /*----------------------------- Main Vis --------------------*/
-    let margin = 30;
+    let margin = this.props.className === "Icons" ? 30 : 0;
     let width = this.props.width;
     let height = this.props.height;
     let svg = d3.select(this.ref).attr("width", width + margin) .attr("height", height + 2*margin);
