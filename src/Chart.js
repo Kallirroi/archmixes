@@ -36,6 +36,7 @@ class SvgRenderer extends Component {
 	let m = 1; // number of distinct clusters
 	let clusters = new Array(m);
 
+
 	let ShapesSubset = Shapes.filter( (element) => element.className===this.props.className);
 	let nodes = ShapesSubset.map(function(element) {
 	  	let i = 1,
@@ -47,7 +48,7 @@ class SvgRenderer extends Component {
 	        radius: r,
 	        pathToImage: element.pathToImage,
 	        x: element.className==="Icons" ? width/2  + width/2 * (Math.random() - 0.5):  width/2 + width* (Math.random() - 0.5),
-	        y: element.className==="Icons" ? height * 0.95 + 10 * (Math.random() - 0.5) : height/10 + height/2 * (Math.random() - 1)
+	        y: element.className==="Icons" ? height * 0.95 + 10 * (Math.random() - 0.5) : height/2 + height/2 * (Math.random() - 1)
 	      };
 	  if (!clusters[i] || (r > clusters[i].radius)) clusters[i] = d;
 	  return d;
@@ -56,6 +57,7 @@ class SvgRenderer extends Component {
 	let force = d3.forceSimulation()
 		.force('cluster', cluster().strength(0))
 		.force('collide', d3.forceCollide(d => d.radius + padding).strength(0))
+		.force('repel', d3.forceManyBody().strength(-100))
 		.on('tick', layoutTick)
 		.nodes(nodes);
 
@@ -85,6 +87,22 @@ class SvgRenderer extends Component {
 
 	svg.selectAll('image.icons')
 		.on('click', (d) => window.open(d.url));
+
+	svg.selectAll("circle")
+	    .data(nodes.slice(1))
+	  .enter().append("svg:circle")
+	    .attr("r", "2")
+
+	let root = nodes[0];
+	root.radius = 0;
+	root.fixed = true;
+
+	svg.on("mousemove", function() {
+		  root.px = d3.event.x;
+		  root.py = d3.event.y;
+		  force.restart();
+		});
+
 
 	function layoutTick(e) {
 	  node
