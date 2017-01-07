@@ -32,8 +32,7 @@ class SvgRenderer extends Component {
     let width = this.props.width;
     let height = this.props.height;
     let svg = d3.select(this.ref).attr("width", width) .attr("height", height + 2*margin);
-
-  	let padding =  this.props.className === "Icons" ?  10 :  20;
+    let padding =  this.props.className === "Icons" ?  10 :  20;
 	let m = 1; // number of distinct clusters
 	let clusters = new Array(m);
 
@@ -46,6 +45,7 @@ class SvgRenderer extends Component {
 	      	className: element.className,
 	        cluster: i,
 	        radius: r,
+	        pathToImage: element.pathToImage,
 	        x: element.className==="Icons" ? width/2  + width/2 * (Math.random() - 0.5):  width/2 + width/2* (Math.random() - 0.5),
 	        y: element.className==="Icons" ? height * 0.95 + 10 * (Math.random() - 0.5) : height/2 + height/2 * (Math.random() - 0.5)
 	      };
@@ -59,11 +59,15 @@ class SvgRenderer extends Component {
 		.on('tick', layoutTick)
 		.nodes(nodes);
 
-	let node = svg.selectAll("path")
+	let node = svg.selectAll("image")
 		.data(nodes)
 		.enter()
-		.append("path")
-		.attr('d', function(d,i) { return ShapesSubset[i].path})
+		.append("svg:image")
+		// .attr('d', function(d,i) { return ShapesSubset[i].path})
+		.attr('xlink:href', (d) => d.pathToImage)
+		.attr('height', '10em')
+		.attr('width', '10em')
+		.attr('z-index', '100')
 		.style("fill", "#00f")
 		.call(d3.drag()
 		.on("start", dragstarted)
@@ -78,8 +82,7 @@ class SvgRenderer extends Component {
 	svg.selectAll("path")
 	    .filter( (d) => d.className==="Images")
 	 	.classed("images", true)
-		.style("opacity", "0.2")
-		.attr("z-index", "-1")
+		.style("opacity", "0.2");
 
 	svg.selectAll('path.icons')
 		.on('click', (d) => window.open(d.url));
