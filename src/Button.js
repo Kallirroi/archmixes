@@ -3,18 +3,16 @@ import './App.css';
 import './normalize.css';
 import './skeleton.css';
 
-class Modal extends React.Component {
+class Button extends React.Component {
 	render() {
 		return (
-			<div className="Modal">
-				<div className="row">
-					<h1>MODAL</h1>
-				</div>
+			<div className="Button">
+				<button> click here </button>
 	    	</div>
 	    )
 	}
 }
 
 
-export default Modal;
+export default Button;
 

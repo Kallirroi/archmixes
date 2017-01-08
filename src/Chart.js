@@ -31,7 +31,7 @@ class SvgRenderer extends Component {
     let margin = this.props.className === "Icons" ? 30 : 0;
     let width = this.props.width;
     let height = this.props.height;
-    let svg = d3.select(this.ref).attr("width", width) .attr("height", height + 2*margin);
+    let svg = d3.select(this.ref).attr("width", width).attr("height", height + 2*margin);
     let padding =  this.props.className === "Icons" ?  10 :  20;
 	let m = 1; // number of distinct clusters
 	let clusters = new Array(m);

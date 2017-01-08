@@ -6,11 +6,33 @@ body {
   position: relative;
   margin: 0 auto;
   box-sizing: border-box; 
-  height: 110em;
+  height: 100em;
   background: linear-gradient(to bottom, #FFDCF9, #DBFFFF);
 }
 
-/* ------------------------------------------------ICONS------------------------------------------------*/
+/* ------------------------------------------------Title------------------------------------------------*/
+
+.title {
+  position: relative;
+  display: block;
+}
+
+.title  > h1{
+  position:fixed;
+  top: 1em;
+  left: 43vw;
+  font-size:2.5em;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+
+
+/* ------------------------------------------------Button------------------------------------------------*/
+button:hover {
+  cursor: pointer;
+}
+
+/* ------------------------------------------------Icons------------------------------------------------*/
 
 .Icons {
   margin: 0 auto;
@@ -38,21 +60,6 @@ svg.Images{
   margin: 0 auto;
   display: block;
   border: 1px solid red;
-}
-/* ------------------------------------------------Title------------------------------------------------*/
-
-.title {
-  position: relative;
-  display: block;
-}
-
-.title  > h1{
-  position:fixed;
-  top: 1em;
-  left: 43vw;
-  font-size:2.5em;
-  font-weight: 400;
-  letter-spacing: 0.03em;
 }
 
 /* ------------------------------------------------FOOTER------------------------------------------------*/
