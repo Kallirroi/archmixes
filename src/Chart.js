@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
 import Shapes from './Shapes';
-
+import {isolate} from './utils/helpers';
 
 class SvgRenderer extends Component {
   constructor() {
@@ -57,7 +57,8 @@ class SvgRenderer extends Component {
 	let force = d3.forceSimulation()
 		.force('cluster', cluster().strength(0))
 		.force('collide', d3.forceCollide(d => d.radius + padding).strength(0))
-		.force('Y', d3.forceY((d) =>  d.className==="Icons" ? height : d.y))
+		.force('iconsY', isolate(nodes, d3.forceY((d) => height), function(d) {return d.className==="Icons"; }))
+		.force('imagesX', isolate(nodes, d3.forceX((d) => (Math.random() - 0.5)* width), function(d) {return d.className==="Images"; }))
 		.force('repel', d3.forceManyBody().strength(-100))
 		.on('tick', layoutTick)
 		.nodes(nodes);

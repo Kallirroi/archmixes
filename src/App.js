@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
 
+import Gameloop from './Gameloop';
 import Title from './Title';
 import Button from './Button';
 import Chart from './Chart';
@@ -29,7 +30,7 @@ class App extends Component {
   }
 
   toggleState() {
-    console.log('toggleeee')
+    this.setState({ motion: !this.state.motion});
   }
 
   render() {
@@ -51,4 +52,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Gameloop(App);
