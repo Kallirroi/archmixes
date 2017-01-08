@@ -16,11 +16,10 @@ class SvgRenderer extends Component {
 
   render() {
     let timer = this.props.timer;
-	this.props.className==="Images" ? console.log(timer) : 1;
 
     return (
       <div className={this.props.className}>
-        <svg width={this.props.width} height={this.props.height} ref={this.onRef} />
+        <svg  width={this.props.width} height={this.props.height} ref={this.onRef} />
       </div>
     );
   }
@@ -36,7 +35,6 @@ class SvgRenderer extends Component {
     let height = this.props.height;
     let svg = d3.select(this.ref).attr("width", width).attr("height", height + 2*margin);
     /*----------------------------- Vis parameters --------------------*/
-
     let padding =  this.props.className === "Icons" ?  10 :  20;
 	let m = 1; // number of distinct clusters
 	let clusters = new Array(m);
