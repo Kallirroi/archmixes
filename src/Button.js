@@ -7,7 +7,7 @@ class Button extends React.Component {
 	render() {
 		return (
 			<div className="Button">
-				<button> click here </button>
+				<button> toggle motion </button>
 	    	</div>
 	    )
 	}

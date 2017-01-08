@@ -28,6 +28,14 @@ body {
 
 
 /* ------------------------------------------------Button------------------------------------------------*/
+
+button {
+  position: relative;
+  display: block;
+  left: 5vw;
+  top: 5vh;
+}
+
 button:hover {
   cursor: pointer;
 }

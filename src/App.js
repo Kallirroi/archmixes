@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import * as d3 from 'd3';
 
 import Gameloop from './Gameloop';
 import Title from './Title';
@@ -36,11 +35,10 @@ class App extends Component {
   render() {
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
-
     return (  
       <div className="App">
         <div className="container">
-          <Chart className={"Images"} width={windowWidth} height={windowHeight}/>
+          <Chart timer={this.props.time} className={"Images"} width={windowWidth} height={windowHeight}/>
           <Title/>
           <Button onClick={this.toggleState} />
           <Chart className={"Icons"} width={windowWidth} height={0.2 * windowHeight}/>

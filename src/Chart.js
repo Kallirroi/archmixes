@@ -15,6 +15,9 @@ class SvgRenderer extends Component {
   }
 
   render() {
+    let timer = this.props.timer;
+	this.props.className==="Images" ? console.log(timer) : 1;
+
     return (
       <div className={this.props.className}>
         <svg width={this.props.width} height={this.props.height} ref={this.onRef} />
@@ -27,16 +30,18 @@ class SvgRenderer extends Component {
       return;
     }
 
-    /*----------------------------- Main Vis --------------------*/
+    /*----------------------------- SVG parameters --------------------*/
     let margin = this.props.className === "Icons" ? 30 : 0;
     let width = this.props.width;
     let height = this.props.height;
     let svg = d3.select(this.ref).attr("width", width).attr("height", height + 2*margin);
+    /*----------------------------- Vis parameters --------------------*/
+
     let padding =  this.props.className === "Icons" ?  10 :  20;
 	let m = 1; // number of distinct clusters
 	let clusters = new Array(m);
 
-
+    /*----------------------------- Shapes object--------------------*/
 	let ShapesSubset = Shapes.filter( (element) => element.className===this.props.className);
 	let nodes = ShapesSubset.map(function(element) {
 	  	let i = 1,
@@ -53,12 +58,12 @@ class SvgRenderer extends Component {
 	  if (!clusters[i] || (r > clusters[i].radius)) clusters[i] = d;
 	  return d;
 	});
-
+    /*----------------------------- Force --------------------*/
 	let force = d3.forceSimulation()
 		.force('cluster', cluster().strength(0))
 		.force('collide', d3.forceCollide(d => d.radius + padding).strength(0))
 		.force('iconsY', isolate(nodes, d3.forceY((d) => height), function(d) {return d.className==="Icons"; }))
-		.force('imagesX', isolate(nodes, d3.forceX((d) => (Math.random() - 0.5)* width), function(d) {return d.className==="Images"; }))
+		// .force('imagesX', isolate(nodes, d3.forceX((d) => (Math.random() - 0.5)* width), function(d) {return d.className==="Images"; }))
 		.force('repel', d3.forceManyBody().strength(-100))
 		.on('tick', layoutTick)
 		.nodes(nodes);
@@ -76,6 +81,8 @@ class SvgRenderer extends Component {
 		.on("start", dragstarted)
 		.on("drag", dragged)
 		.on("end", dragended));
+
+    /*----------------------------- SVG manipulations --------------------*/
 
 	svg.selectAll("image")
 	    .filter( (d) => d.className==="Icons")
@@ -95,8 +102,10 @@ class SvgRenderer extends Component {
 	    .attr("r", "2")
 
 
+    /*----------------------------- Tick functions --------------------*/
+
 	function layoutTick(e) {
-	  node
+	  	node
 	      .attr("transform", function(d) { 
 	      	let dx = (d.x > width) || (d.x < 0) ? width/2 : d.x ; 
 	      	let dy =  (d.y > height) || (d.y < 0) ? height * 0.8: d.y ; 
@@ -104,10 +113,11 @@ class SvgRenderer extends Component {
 	      	return d.className==="Icons" ? `translate(${dx},${dy}) scale(${scale})` : `translate(${dx},${d.y}) scale(${scale})`;
 	      })
 
-	  force.force('collide').strength(1);
+		 force.force('collide').strength(1);
 	}
 
-	// Move d to be adjacent to the cluster node.
+    /*----------------------------- Helper functions --------------------*/
+	
 	function cluster () {
 	  let nodes,
 	    strength = 0.01;
