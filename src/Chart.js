@@ -15,7 +15,6 @@ class SvgRenderer extends Component {
   }
 
   render() {
-    let timer = this.props.timer;
     return (
       <div className={this.props.className}>
         <svg  width={this.props.width} height={this.props.height} ref={this.onRef} />

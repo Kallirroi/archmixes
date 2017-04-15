@@ -1,51 +1,46 @@
 import React, { Component } from 'react';
-
-import Gameloop from './Gameloop';
+import { Router, Link  } from 'react-router';
+import Routes from './Routes';
 import Title from './Title';
-import Button from './Button';
 import Chart from './Chart';
 import Content from './Content';
 import ContentFooter from './ContentFooter';
-import * as d3 from 'd3';
 
 import './App.css';
 import './normalize.css';
 import './skeleton.css';
 
+
 class App extends Component {
+
   constructor() {
     super();
-    this.state = {
-      motion: true,
-      image: ""
-    }
-     this.toggleState = this.toggleState.bind(this);
   }
 
   componentDidMount() {
-    window.addEventListener('click', this.toggleState);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('click', this.toggleState);
   }
-
-  toggleState() {
-    this.setState({ motion: !this.state.motion});
-  }  
-
-
 
   render() {
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
+
     return (  
 
       <div className="App">
+        <p><Link to="/">Home</Link></p>
+        <p><Link to="/connect">Connect</Link></p>
+        <p><Link to="/instruction">Instruction</Link></p>
+        <p><Link to="/about">About</Link></p>
+        <p><Link to="/event">Event</Link></p>
+        {this.props.children}
+
         <div className="container">
           <Chart className={"Images"} width={windowWidth} height={windowHeight}/>
           <Title/>
-          <Chart className={"Icons"} width={windowWidth} height={0.2 * windowHeight}/>
+          <Chart className={"Icons"} width={windowWidth} height={windowHeight}/>
           <Content />
           <ContentFooter/>
         </div>
