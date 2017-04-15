@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { Router, Link  } from 'react-router';
 import Routes from './Routes';
-import Title from './Title';
-import Chart from './Chart';
-import Content from './Content';
-import ContentFooter from './ContentFooter';
+
 
 import './App.css';
 import './normalize.css';
@@ -24,8 +21,6 @@ class App extends Component {
   }
 
   render() {
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
 
     return (  
 
@@ -36,14 +31,6 @@ class App extends Component {
         <p><Link to="/about">About</Link></p>
         <p><Link to="/event">Event</Link></p>
         {this.props.children}
-
-        <div className="container">
-          <Chart className={"Images"} width={windowWidth} height={windowHeight}/>
-          <Title/>
-          <Chart className={"Icons"} width={windowWidth} height={windowHeight}/>
-          <Content />
-          <ContentFooter/>
-        </div>
       </div>
     );
   }
