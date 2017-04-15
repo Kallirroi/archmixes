@@ -7,8 +7,8 @@ class Instruction extends React.Component {
 
 	render() {
 		return (
-        <div className="Content">
-			<div>
+        <div className="Instruction">
+			<div className="Content">
 				<img src="http://placehold.it/355x180" role="presentation"/>
 				<img src="http://placehold.it/355x180" role="presentation"/>
 				<img src="http://placehold.it/355x180" role="presentation"/>

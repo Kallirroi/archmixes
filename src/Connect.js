@@ -7,8 +7,8 @@ import './skeleton.css';
 class Connect extends React.Component {
 	render() {
 		return (
-			<div className="Content">
-				<div>
+			<div className="Connect">
+				<div className="Content">
 					Connect with Sam
 				</div>
 	    	</div>

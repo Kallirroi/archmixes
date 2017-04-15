@@ -6,12 +6,10 @@ import './normalize.css';
 import './skeleton.css';
 
 class Event extends React.Component {
-
-
 	render() {
 		return (
-        <div className="Content">
-			<div>
+        <div className="Event">
+			<div className="Content">
 				<img src="http://placehold.it/755x380" role="presentation"/>
 				<p>Sam Ghantous <Emoji emoji={{ id: 'poop'}} size={24} /><Emoji emoji={{ id: 'poop'}} size={24} /> </p>
 				<p>Yve YANG Gallery is pleased to announce “  ”, a solo exhibition by Sam Ghantous.</p>

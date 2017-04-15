@@ -8,8 +8,8 @@ class About extends React.Component {
 
 	render() {
 		return (
-        	<div className="Content">
-				<div>
+        	<div className="About">
+				<div className="Content">
 					<img src="http://placehold.it/255x280" role="presentation"/> 
 					<img src="http://placehold.it/255x280" role="presentation"/>
 					<p> Archmixes is a project by Sam Ghantous. </p>
