@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
+
 import Shapes from './Shapes';
+import FrameElement from './FrameElement';
 import {isolate} from './utils/helpers';
 
 class SvgRenderer extends Component {
@@ -8,6 +10,7 @@ class SvgRenderer extends Component {
     super();
     this.onRef = ref => this.ref = ref;
     this.renderSvg = this.renderSvg.bind(this);
+    this.renderFrame = this.renderFrame.bind(this);
   }
 
   componentDidMount() {
@@ -22,6 +25,10 @@ class SvgRenderer extends Component {
     );
   }
 
+  renderFrame(d) { 
+  	<FrameElement className="FrameElement" url={d.url} />
+  }
+  
   renderSvg() {
     if (!this.ref) {
       return;
@@ -95,10 +102,10 @@ class SvgRenderer extends Component {
 
 	svg.selectAll("image")
 	    .filter( (d) => d.className==="Images")
-		.style("opacity", "0.3");
+		.style("opacity", "0.2");
 
 	svg.selectAll('image.icons')
-		.on('click', (d) => window.open(d.url));
+		.on('click', (d) => this.renderFrame(d) );
 
 	svg.selectAll("circle")
 	    .data(nodes.slice(1))

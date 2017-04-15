@@ -3,11 +3,25 @@
 
 body { 
   cursor: crosshair; 
-  font-family: 'Karla';
-  background: linear-gradient(to bottom, #FFDCF9, #DBFFFF);
+  /*background: linear-gradient(to bottom, #FFDCF9, #DBFFFF);*/
+  background-image: linear-gradient(to bottom, rgba(255, 0, 127, 0.3), rgba(0, 0, 255, 0.3), rgba(79, 250, 216, 0.3), rgba(205, 254, 0, 0.3));
+  background-size: 200% 200%;
   height: 100vh;
   display: block;
   overflow: hidden;
+  font-size: 2em; 
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: 'Karla', sans-serif;
+  color: blue; 
+
+  animation: changeGradient 15s ease-in-out infinite;
+}
+
+@keyframes changeGradient { 
+    0%{ background-position:50% 0% }
+    50%{ background-position:50% 100% }
+    100%{ background-position:50% 0% }
 }
 
 .container {
@@ -85,6 +99,11 @@ svg.Icons{
   display: block;
 }
 
+image.icons {
+  z-index: 3;
+
+}
+
 image.icons:hover {
   cursor: pointer;
   /*animation: rollaround 0.5s infinite;*/
@@ -110,6 +129,14 @@ svg.Images{
   display: block;
 }
 
+.Frame {
+  position: fixed;
+  display: block;
+  top: 10vh;
+  left: 25vw;
+  border: 1px solid;
+}
+
 /* ------------------------------------------------CONTENT------------------------------------------------*/
 
 .Content {
@@ -118,12 +145,13 @@ svg.Images{
   line-height: 1.5em;
   z-index: 1;
   font-size: 1em;
-  top: 20vh;
+  top: 30vh;
   /*border: 1px solid;*/
   margin: 0 auto;
   width: 50%;
-  height: 70vh;
-  overflow-y: scroll;
+  height: 60vh;
+  overflow-y: scroll;  
+  font-weight: 700;
 }
 
 .Content > div > img {
