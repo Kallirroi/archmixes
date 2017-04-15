@@ -7,9 +7,13 @@ class Instruction extends React.Component {
 
 	render() {
 		return (
-        <div className="Instruction">
-          INSTRUCTION!
-        </div>
+        <div className="Content">
+			<div>
+				<img src="http://placehold.it/355x180" role="presentation"/>
+				<img src="http://placehold.it/355x180" role="presentation"/>
+				<img src="http://placehold.it/355x180" role="presentation"/>
+			</div>
+		</div>
 	    )
 	}
 }

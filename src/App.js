@@ -25,7 +25,6 @@ class App extends Component {
           <Chart className={"Images"} width={windowWidth} height={windowHeight}/>
           <Chart className={"Icons"} width={windowWidth} height={windowHeight}/>
           {this.props.children}
-
       </div>
     );
   }

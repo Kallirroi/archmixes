@@ -95,7 +95,7 @@ class SvgRenderer extends Component {
 
 	svg.selectAll("image")
 	    .filter( (d) => d.className==="Images")
-		.style("opacity", "0.5");
+		.style("opacity", "0.3");
 
 	svg.selectAll('image.icons')
 		.on('click', (d) => window.open(d.url));
@@ -112,7 +112,7 @@ class SvgRenderer extends Component {
 	  	node
 	      .attr("transform", function(d) { 
 	      	let dx = (d.x > width) || (d.x < 0) ? width * 0.2 : d.x ; 
-	      	let dy =  (d.y > height) || (d.y < 0) ? height * 0.8: d.y ; 
+	      	let dy =  (d.y > height) || (d.y < 0) ? height * 0.2: d.y ; 
 	      	let scale =  d.className==="Icons" ? 0.25 : 2.4;
 	      	return d.className==="Icons" ? `translate(${dx},${dy}) scale(${scale})` : `translate(${dx},${d.y}) scale(${scale})`;
 	      })

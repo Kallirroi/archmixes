@@ -7,9 +7,11 @@ import './skeleton.css';
 class Connect extends React.Component {
 	render() {
 		return (
-        <div className="Connect">
-          CONNECT!
-        </div>
+			<div className="Content">
+				<div>
+					Connect with Sam
+				</div>
+	    	</div>
 	    )
 	}
 }

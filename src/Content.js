@@ -5,12 +5,10 @@ import './skeleton.css';
 
 class Content extends React.Component {
 	render() {
-		// console.log(this.state.image)
 		return (
-
 			<div className="Content">
-				{/*       MAIN TEXT SECTION         */}
-					<div  style={{paddingLeft: '10em', paddingRight: '10em', paddingTop: '0em'}}>
+				<div>
+					<img src="http://placehold.it/755x380" role="presentation"/>
 					<p>Tweeting from your couch, in your sweats, can be an architectural act.</p>
 					<p>Architecture’s ability to serve and shape a public has been weakened by its disciplinary exclusivity and the privatization of public space. </p>
 					<p>Hope for architecture today is found, instead, in its ability to be shared online. There, its value is in its newfound velocity, intensity, and spread - an ability to “get around”. Attention is a currency and the image, a visual byte that circulates, has already replaced the building in space, as such. Architecture is on and of the web, and it can shape public there.</p>
@@ -18,7 +16,7 @@ class Content extends React.Component {
 					<p>This is a call to speed up and broadcast architecture made of the web, for the web. Creativity has been democratized: now anyone with a phone and repost button can sculpt their own aesthetic universes, be it on Instagram, YouTube, or SoundCloud. Through recycling the pixel, vector, and mesh-waste that lives online, architecture has the opportunity to sustain the archive of its disciplinary history; it stands the chance to engage publics, it might even sustain an economy of attention in the era of perpetual distraction. </p>
 					<p>This thesis is a performance that will be hosted in the ACT Cube and broadcast on YouTube. Bring your phone.</p>
 					<p>Architecture in the Afternet is an M.Arch thesis delivered and performed at MIT Architecture by Sam Ghantous. The project was advised by William O’Brien Jr., and readers Antonio Furgiuele, Curtis Roth, Andrew Kovacs.</p>
-					</div>
+				</div>
 	    	</div>
 	    )
 	}

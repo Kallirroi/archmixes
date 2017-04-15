@@ -68,6 +68,7 @@ body {
   top: calc(50% - 50px);
 }
 
+
 /* ------------------------------------------------Icons------------------------------------------------*/
 
 .Icons {
@@ -85,6 +86,12 @@ svg.Icons{
 
 image.icons:hover {
   cursor: pointer;
+  /*animation: rollaround 0.5s infinite;*/
+}
+
+@keyframes rollaround {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /* ------------------------------------------------IMAGES------------------------------------------------*/
@@ -106,11 +113,21 @@ svg.Images{
 
 .Content {
   margin: 0 auto;
-  position: absolute;
+  position: relative;
   line-height: 1.5em;
   z-index: 1;
   font-size: 1em;
-  top: 0vh;
+  top: 20vh;
+  /*border: 1px solid;*/
+  margin: 0 auto;
+  width: 50%;
+  height: 70vh;
+  overflow-y: scroll;
+}
+
+.Content > div > img {
+  display: inline-block;
+  /*float: right;*/
 }
 
 /* ------------------------------------------------FOOTER------------------------------------------------*/
