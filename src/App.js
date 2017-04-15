@@ -21,7 +21,6 @@ class App extends Component {
           <div className="Links Instruction"><Link to="/instruction">Instruction</Link></div>
           <div className="Links About"><Link to="/about">About</Link></div>
           <div className="Links Event"><Link to="/event">Event</Link></div>
-
           <Title/>
           <Chart className={"Images"} width={windowWidth} height={windowHeight}/>
           <Chart className={"Icons"} width={windowWidth} height={windowHeight}/>

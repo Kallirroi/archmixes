@@ -7,12 +7,12 @@ body {
   background: linear-gradient(to bottom, #FFDCF9, #DBFFFF);
   height: 100vh;
   display: block;
+  overflow: hidden;
 }
 
 .container {
   position: relative;
   margin: 0 auto;
-
 }
 
 /* ------------------------------------------------Title------------------------------------------------*/
@@ -57,7 +57,7 @@ body {
 }
 
 .Links.About > a{ 
-  top: calc(100% - 5vh - 10px);
+  top: calc(100% - 8vh - 10px);
   left: calc(50% - 50px);
 }
 
@@ -74,13 +74,15 @@ body {
   margin: 0 auto;
   position: absolute;
   display: block;
+  top: 0;
 }
+
 svg.Icons{
   margin: 0 auto;
   position: relative;
   display: block;
-  border: 1px solid red;
 }
+
 image.icons:hover {
   cursor: pointer;
 }
@@ -89,28 +91,29 @@ image.icons:hover {
 
 .Images {
   margin: 0 auto;
-  position: fixed;
+  position: absolute;
   height: 0px;
+  display: block;
+  top: 0;
 } 
+
 svg.Images{
   margin: 0 auto;
   display: block;
-  border: 1px solid red;
 }
 
 /* ------------------------------------------------CONTENT------------------------------------------------*/
 
 .Content {
   margin: 0 auto;
-  position: relative;
+  position: absolute;
   line-height: 1.5em;
   z-index: 1;
-  font-size: 1.4em;
+  font-size: 1em;
   top: 0vh;
 }
 
 /* ------------------------------------------------FOOTER------------------------------------------------*/
-
 
 #footer{
  position: absolute;
@@ -120,5 +123,4 @@ svg.Images{
  width: 10vw;
  font-size:60%; 
  font-style: italic;
-
 }

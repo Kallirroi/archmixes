@@ -17,7 +17,7 @@ class SvgRenderer extends Component {
   render() {
     return (
       <div className={this.props.className}>
-        <svg  width={this.props.width} height={this.props.height} ref={this.onRef} />
+        <svg width={this.props.width} height={this.props.height} ref={this.onRef} />
       </div>
     );
   }
@@ -32,6 +32,7 @@ class SvgRenderer extends Component {
     let width = this.props.width;
     let height = this.props.height;
     let svg = d3.select(this.ref).attr("width", width).attr("height", height + 2*margin);
+    
     /*----------------------------- Vis parameters --------------------*/
     let padding =  this.props.className === "Icons" ?  10 :  20;
 	let m = 1; // number of distinct clusters
@@ -41,24 +42,31 @@ class SvgRenderer extends Component {
 	let ShapesSubset = Shapes.filter( (element) => element.className===this.props.className);
 	let nodes = ShapesSubset.map(function(element) {
 	  	let i = 1,
-	      r =  element.className==="Icons" ? 40 : 90,
-	      d = {
-	      	url: element.url,
-	      	className: element.className,
-	        cluster: i,
-	        radius: r,
-	        pathToImage: element.pathToImage,
-	        x: element.className==="Icons" ? width/2  + 100* (Math.random() - 0.5):  width/2 + width* (Math.random() - 0.5),
-	        y: element.className==="Icons" ? height * 0.95 + 10 * (Math.random() - 1) : height/2 + height/2 * (Math.random() - 1)
-	      };
-	  if (!clusters[i] || (r > clusters[i].radius)) clusters[i] = d;
-	  return d;
+		r =  element.className==="Icons" ? 40 : 90,
+		d = {
+			url: element.url,
+			className: element.className,
+		cluster: i,
+		radius: r,
+		pathToImage: element.pathToImage,
+		x: element.className==="Icons" ? 
+			width * 0.4  + 10 * (Math.random() - 0.5)
+			:  width/2 + width * (Math.random() - 0.5),
+		y: element.className==="Icons" ? 
+			height * 0.25 + 10 * (Math.random() - 0.5) 
+			: height/2 + height/2 * (Math.random() - 1)
+		};
+	  	
+	  	if (!clusters[i] || (r > clusters[i].radius)) clusters[i] = d;
+	 	
+	 	return d;
 	});
+
     /*----------------------------- Force --------------------*/
 	let force = d3.forceSimulation()
 		.force('cluster', cluster().strength(0))
 		.force('collide', d3.forceCollide(d => d.radius + padding).strength(0))
-		.force('iconsY', isolate(nodes, d3.forceY((d) => height), function(d) {return d.className==="Icons"; }))
+		.force('iconsY', isolate(nodes, d3.forceY((d) => height/2 * (Math.random() - 0.5)), function(d) {return d.className==="Icons"; }))
 		// .force('imagesX', isolate(nodes, d3.forceX((d) => (Math.random() - 0.5)* width), function(d) {return d.className==="Images"; }))
 		.force('repel', d3.forceManyBody().strength(-100))
 		.on('tick', layoutTick)
@@ -103,9 +111,9 @@ class SvgRenderer extends Component {
 	function layoutTick(e) {
 	  	node
 	      .attr("transform", function(d) { 
-	      	let dx = (d.x > width) || (d.x < 0) ? width/2 : d.x ; 
+	      	let dx = (d.x > width) || (d.x < 0) ? width * 0.2 : d.x ; 
 	      	let dy =  (d.y > height) || (d.y < 0) ? height * 0.8: d.y ; 
-	      	let scale =  d.className==="Icons" ? 0.25 : 2.5;
+	      	let scale =  d.className==="Icons" ? 0.25 : 2.4;
 	      	return d.className==="Icons" ? `translate(${dx},${dy}) scale(${scale})` : `translate(${dx},${d.y}) scale(${scale})`;
 	      })
 
