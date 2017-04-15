@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Karla:400,700');
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700');
 
 body { 
   cursor: crosshair; 
   font-family: 'Karla';
   background: linear-gradient(to bottom, #FFDCF9, #DBFFFF);
-  height: 120em;
-  display: inline-block;
+  height: 100vh;
+  display: block;
 }
 
 .container {
@@ -16,33 +17,55 @@ body {
 
 /* ------------------------------------------------Title------------------------------------------------*/
 
-.title {
-  position: relative;
+.Title  .Links  > a {
   display: block;
-}
-
-.title  > h1{
-  position:fixed;
+  position: fixed;
   top: 1em;
-  left: 43vw;
-  font-size:2.2em;
+  left:  calc(50% - 95px);
+  font-size: 2.2em;
   font-weight: 700;
   letter-spacing: 0.03em;
+  color: inherit;
+  width: auto;
+  font-weight: 700;
+  font-family: 'Space Mono';
 }
 
+/* ------------------------------------------------Links------------------------------------------------*/
 
-/* ------------------------------------------------Button------------------------------------------------*/
-
-button {
-  position: relative;
+.Links > a {
+  position: absolute;
+  color: inherit;
   display: block;
   left: 5vw;
   top: 5vh;
-  border: 1px solid;
+  width: 100px;
+  text-decoration: none;
+  z-index: 2;
+  font-size: 1.8em;
 }
 
-button:hover {
-  cursor: pointer;
+.Links.Connect > a {
+  left: calc(50% - 50px);
+  top: 10%;
+}
+
+.Links.Instruction > a {
+  writing-mode: vertical-rl;
+  right: 2vw;
+  top: calc(50% - 50px);
+}
+
+.Links.About > a{ 
+  top: calc(100% - 5vh - 10px);
+  left: calc(50% - 50px);
+}
+
+.Links.Event > a {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  left: 2vw;
+  top: calc(50% - 50px);
 }
 
 /* ------------------------------------------------Icons------------------------------------------------*/
@@ -83,7 +106,7 @@ svg.Images{
   line-height: 1.5em;
   z-index: 1;
   font-size: 1.4em;
-  top: 20vh;
+  top: 0vh;
 }
 
 /* ------------------------------------------------FOOTER------------------------------------------------*/
