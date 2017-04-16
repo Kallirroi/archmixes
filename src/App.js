@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router';
 
+
 import Title from './Title';
 import Chart from './Chart';
-// import FrameElement from './FrameElement';
-// import FrameContent from './FrameContent';
 
 import './App.css';
 import './normalize.css';

@@ -1,4 +1,7 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import { Timeline } from 'react-twitter-widgets'
+
 import './App.css';
 import './normalize.css';
 import './skeleton.css';
@@ -9,9 +12,20 @@ class Instruction extends React.Component {
 		return (
         <div className="Instruction">
 			<div className="Content">
-				<img src="http://placehold.it/355x180" role="presentation"/>
-				<img src="http://placehold.it/355x180" role="presentation"/>
-				<img src="http://placehold.it/355x180" role="presentation"/>
+				<iframe src="https://www.youtube.com/watch?v=GuQJ-B7MezA"></iframe>
+				<iframe src="https://archmixlist.tumblr.com/"></iframe>
+				
+				<Timeline
+				    dataSource={{
+				      sourceType: 'profile',
+				      screenName: 'archmixes'
+				    }}
+				    options={{
+				      username: 'Archmixes',
+				      height: '400'
+				    }}
+				  />
+
 			</div>
 		</div>
 	    )

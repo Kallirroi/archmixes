@@ -166,6 +166,17 @@ svg.Images{
   z-index: 1;
 }
 
+.Content > p > a {
+  color: inherit;
+}
+/* ------------------------------------------------INSTRUCTION------------------------------------------------*/
+
+.Instruction .Content  > img{
+  display: inline-block;
+  margin: 0 auto;
+  position: relative;
+}
+
 /* ------------------------------------------------FOOTER------------------------------------------------*/
 
 #footer{
