@@ -144,7 +144,6 @@ svg.Images{
   z-index: 1;
   font-size: 1em;
   top: 30vh;
-  /*border: 1px solid;*/
   margin: 0 auto;
   width: 60%;
   height: 60vh;
@@ -154,14 +153,12 @@ svg.Images{
 
 .Content > div > img {
   display: inline-block;
-  /*float: right;*/
 }
 
 .Content > img {
   margin: 0 auto;
   display: block;
   height: 70% ;
-  /*width: 40vw;*/
   margin-bottom: 5vh;
   z-index: 1;
 }
@@ -171,10 +168,21 @@ svg.Images{
 }
 /* ------------------------------------------------INSTRUCTION------------------------------------------------*/
 
-.Instruction .Content  > img{
+.Instruction .Content  > iframe{
+  display: inline-block;
+  margin: 0 10px;
+  position: relative;
+  border: 3px solid blue;
+  width: 400px;
+  height: 250px;
+}
+
+#twitter-widget-0 {
   display: inline-block;
   margin: 0 auto;
-  position: relative;
+  position: absolute !important;
+  left: calc(50% - 200px);
+  border: 3px solid blue !important; 
 }
 
 /* ------------------------------------------------FOOTER------------------------------------------------*/
