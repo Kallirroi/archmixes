@@ -91,17 +91,18 @@ body {
   position: absolute;
   display: block;
   top: 0;
+  /*z-index: 3;*/
 }
 
 svg.Icons{
   margin: 0 auto;
   position: relative;
   display: block;
+  /*z-index: 3;*/
 }
 
 image.icons {
   z-index: 3;
-
 }
 
 image.icons:hover {
@@ -145,7 +146,7 @@ svg.Images{
   top: 30vh;
   /*border: 1px solid;*/
   margin: 0 auto;
-  width: 50%;
+  width: 60%;
   height: 60vh;
   overflow-y: scroll;  
   font-weight: 700;
@@ -154,6 +155,15 @@ svg.Images{
 .Content > div > img {
   display: inline-block;
   /*float: right;*/
+}
+
+.Content > img {
+  margin: 0 auto;
+  display: block;
+  height: 70% ;
+  /*width: 40vw;*/
+  margin-bottom: 5vh;
+  z-index: 1;
 }
 
 /* ------------------------------------------------FOOTER------------------------------------------------*/

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import * as d3 from 'd3';
 
 import Shapes from './Shapes';
-import FrameElement from './FrameElement';
+// import FrameElement from './FrameElement';
 import {isolate} from './utils/helpers';
 
 class SvgRenderer extends Component {
@@ -26,7 +26,8 @@ class SvgRenderer extends Component {
   }
 
   renderFrame(d) { 
-  	console.log(d);
+  	// console.log(d);
+  	window.open(d.url)
   }
   
   renderSvg() {

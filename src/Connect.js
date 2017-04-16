@@ -9,7 +9,6 @@ class Connect extends React.Component {
 		return (
 			<div className="Connect">
 				<div className="Content">
-					Connect with Sam
 				</div>
 	    	</div>
 	    )
