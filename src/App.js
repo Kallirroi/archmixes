@@ -15,6 +15,7 @@ class App extends Component {
   render() {
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
+    
     return (  
       <div className="App">
           <div className="Links Connect"><Link activeStyle={{ 'textDecoration': 'underline' ,'fontWeight': '700'}} to="/">Connect</Link></div>
@@ -23,7 +24,6 @@ class App extends Component {
           <div className="Links Event"><Link activeStyle={{ 'textDecoration': 'underline'}}  to="/event">Event</Link></div>
 
           <Title/>
-          <Chart className={"Images"} width={windowWidth} height={windowHeight}/>
           <Chart className={"Icons"} width={windowWidth} height={windowHeight}/>
           {this.props.children}
       </div>

@@ -103,7 +103,7 @@ class SvgRenderer extends Component {
 
 	svg.selectAll("image")
 	    .filter( (d) => d.className==="Images")
-		.style("opacity", "0.2");
+		.style("opacity", "0.9");
 
 	svg.selectAll('image.icons')
 		.on('click', (d) => this.renderFrame(d) );

@@ -15,7 +15,7 @@ class Instruction extends React.Component {
 				<div className="Content">
 					<iframe  src="https://archmixlist.tumblr.com/" allowFullScreen></iframe>
 					<iframe  src="https://www.youtube.com/embed/GuQJ-B7MezA"  allowFullScreen></iframe>
-					<Timeline
+					<Timeline style={{'position': 'absolute'}}
 					    dataSource={{
 					      sourceType: 'profile',
 					      screenName: 'archmixes'
