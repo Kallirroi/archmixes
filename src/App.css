@@ -148,7 +148,7 @@ svg.Images{
   width: 60%;
   height: 60vh;
   overflow-y: scroll;  
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .Content > div > img {
