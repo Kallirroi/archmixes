@@ -129,12 +129,9 @@ svg.Images{
   display: block;
 }
 
-.Frame {
+.FrameElement {
   position: fixed;
   display: block;
-  top: 10vh;
-  left: 25vw;
-  border: 1px solid;
 }
 
 /* ------------------------------------------------CONTENT------------------------------------------------*/

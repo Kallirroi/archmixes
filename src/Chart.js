@@ -26,7 +26,7 @@ class SvgRenderer extends Component {
   }
 
   renderFrame(d) { 
-  	<FrameElement className="FrameElement" url={d.url} />
+  	console.log(d);
   }
   
   renderSvg() {

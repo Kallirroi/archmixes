@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router';
 
-import FrameElement from './FrameElement';
 import Title from './Title';
 import Chart from './Chart';
+import FrameElement from './FrameElement';
+import FrameContent from './FrameContent';
 
 import './App.css';
 import './normalize.css';
@@ -25,9 +27,8 @@ class App extends Component {
           <Title/>
           <Chart className={"Images"} width={windowWidth} height={windowHeight}/>
           <Chart className={"Icons"} width={windowWidth} height={windowHeight}/>
-          <FrameElement className="FrameElement"/>
           {this.props.children}
-
+          {FrameContent.map((d,i) => <FrameElement key={i} id={i} url={d.url} />) }
       </div>
     );
   }
