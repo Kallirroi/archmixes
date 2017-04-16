@@ -12,9 +12,7 @@ class Instruction extends React.Component {
 		return (
         <div className="Instruction">
 			<div className="Content">
-				<iframe src="https://www.youtube.com/watch?v=GuQJ-B7MezA"></iframe>
 				<iframe src="https://archmixlist.tumblr.com/"></iframe>
-				
 				<Timeline
 				    dataSource={{
 				      sourceType: 'profile',
