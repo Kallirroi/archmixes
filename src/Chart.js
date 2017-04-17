@@ -76,7 +76,7 @@ class SvgRenderer extends Component {
 		.force('collide', d3.forceCollide(d => d.radius + padding).strength(0))
 		.force('iconsY', isolate(nodes, d3.forceY((d) => height/2 * (Math.random() - 0.5)), function(d) {return d.className==="Icons"; }))
 		// .force('imagesX', isolate(nodes, d3.forceX((d) => (Math.random() - 0.5)* width), function(d) {return d.className==="Images"; }))
-		.force('repel', d3.forceManyBody().strength(-100))
+		.force('repel', d3.forceManyBody().strength(-90))
 		.on('tick', layoutTick)
 		.nodes(nodes);
 
@@ -120,7 +120,7 @@ class SvgRenderer extends Component {
 	  	node
 	      .attr("transform", function(d) { 
 	      	let dx = (d.x > width) || (d.x < 0) ? width * 0.2 : d.x ; 
-	      	let dy =  (d.y > height) || (d.y < 0) ? height * 0.2: d.y ; 
+	      	let dy =  (d.y > height) || (d.y < 0) ? height * 0.4 : d.y ; 
 	      	let scale =  d.className==="Icons" ? 0.25 : 2.4;
 	      	return d.className==="Icons" ? `translate(${dx},${dy}) scale(${scale})` : `translate(${dx},${d.y}) scale(${scale})`;
 	      })
