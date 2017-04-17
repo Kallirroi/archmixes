@@ -11,7 +11,7 @@ class Event extends React.Component {
         <div className="Event">
 			<div className="Content">
 				<img src="https://s-media-cache-ak0.pinimg.com/564x/75/5b/3e/755b3eb1c706980ad3ca75cfe08bceae.jpg" role="presentation"/>
-				<p style={{'font-size': '1.5em'}}>Sam Ghantous </p>
+				<p style={{'fontSize': '1.5em'}}>Sam Ghantous </p>
 				<p><Emoji emoji={{ id: 'classical_building'}} size={24} /><Emoji emoji={{ id: 'repeat'}} size={24}/> <br/>
 				04.28.2017-05.11.2017 <br/>
 				Opening: 04.28.2017 5PM-9PM </p>

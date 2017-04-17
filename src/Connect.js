@@ -11,7 +11,10 @@ class Connect extends React.Component {
     	const windowHeight = window.innerHeight;
 
 		return (
+          	<div>
+          	<Chart className={"Icons"} width={windowWidth} height={windowHeight}/>
 			<Chart className={"Images"} width={windowWidth} height={windowHeight}/>
+			</div>
 	    )
 	}
 }

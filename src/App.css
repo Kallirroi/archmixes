@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Karla:400,700');
+
 @import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700');
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700');
 
 body { 
   cursor: crosshair; 
@@ -12,7 +13,7 @@ body {
   font-size: 2em; 
   line-height: 1.6;
   font-weight: 400;
-  font-family: 'Karla', sans-serif;
+  font-family: 'Karla';
   color: blue; 
 
   animation: changeGradient 15s ease-in-out infinite;
@@ -27,6 +28,7 @@ body {
 .container {
   position: relative;
   margin: 0 auto;
+  font-family: 'Karla', sans-serif;
 }
 
 /* ------------------------------------------------Title------------------------------------------------*/
@@ -55,7 +57,7 @@ body {
   top: 5vh;
   width: 100px;
   text-decoration: none;
-  z-index: 2;
+  z-index: 3;
   font-size: 1.8em;
 }
 
@@ -91,19 +93,15 @@ body {
   position: absolute;
   display: block;
   top: 0;
-  /*z-index: 3;*/
+  z-index: 2;
 }
 
 svg.Icons{
   margin: 0 auto;
   position: relative;
   display: block;
-  /*z-index: 3;*/
 }
 
-image.icons {
-  z-index: 3;
-}
 
 image.icons:hover {
   cursor: pointer;
@@ -123,11 +121,13 @@ image.icons:hover {
   height: 0px;
   display: block;
   top: 0;
+  z-index: 1;
 } 
 
 svg.Images{
   margin: 0 auto;
   display: block;
+  z-index: 1;
 }
 
 .FrameElement {
@@ -141,14 +141,14 @@ svg.Images{
   margin: 0 auto;
   position: relative;
   line-height: 1.5em;
-  z-index: 1;
   font-size: 1em;
   top: 30vh;
   margin: 0 auto;
   width: 60%;
   height: 60vh;
   overflow-y: scroll;  
-  font-weight: 500;
+  font-weight: 400;
+  font-family: 'Karla';
 }
 
 .Content > div > img {
@@ -160,7 +160,6 @@ svg.Images{
   display: block;
   height: 70% ;
   margin-bottom: 5vh;
-  z-index: 1;
 }
 
 .Content > p > a {
@@ -168,20 +167,24 @@ svg.Images{
 }
 /* ------------------------------------------------INSTRUCTION------------------------------------------------*/
 
-.Instruction .Content  > iframe{
+.Instruction.Content {
+  width: 75%;
+}
+
+.Instruction .Content  > iframe {
   display: inline-block;
   margin: 0 10px;
   position: relative;
   border: 3px solid blue;
-  width: 400px;
-  height: 250px;
+  width: 500px;
+  height: 300px;
 }
 
 #twitter-widget-0 {
   display: inline-block;
   margin: 0 auto;
   position: absolute !important;
-  left: calc(50% - 200px);
+  left: calc(35% - 200px);
   border: 3px solid blue !important; 
 }
 

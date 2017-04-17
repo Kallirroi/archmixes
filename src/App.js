@@ -24,7 +24,6 @@ class App extends Component {
           <div className="Links Event"><Link activeStyle={{ 'textDecoration': 'underline'}}  to="/event">Event</Link></div>
 
           <Title/>
-          <Chart className={"Icons"} width={windowWidth} height={windowHeight}/>
           {this.props.children}
       </div>
     );
