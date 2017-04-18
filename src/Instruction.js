@@ -22,7 +22,7 @@ class Instruction extends React.Component {
 					    }}
 					    options={{
 					      username: 'Archmixes',
-					      width: '400',
+					      width: '450',
 					      height: '250'
 					    }}
 					  />
