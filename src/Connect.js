@@ -13,7 +13,7 @@ class Connect extends React.Component {
 
 		return (
           	<div>
-          		<Grid  />
+          		<Grid  className={"Grid"} />
 	          	<Chart className={"Icons"} width={windowWidth} height={windowHeight}/>
 				<Chart className={"Images"} width={windowWidth} height={windowHeight}/>
 			</div>

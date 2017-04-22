@@ -90,6 +90,14 @@ body {
 /* ------------------------------------------------Grid------------------------------------------------*/
 .Grid {
   display: none;
+  margin: 0 auto;
+  position: relative;
+  line-height: 5em;
+  top: 40vh;
+  margin: 0 auto;
+  width: 50%;
+  height: 60vh;
+  overflow-y: scroll;  
 }
 
 /* ------------------------------------------------Icons------------------------------------------------*/
@@ -138,9 +146,13 @@ svg.Images{
 }
 
 .FrameElement {
-  position: fixed;
-  display: block;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+  margin: 0 10px;
 }
+
 
 /* ------------------------------------------------CONTENT------------------------------------------------*/
 
@@ -232,17 +244,8 @@ svg.Images{
     font-size: 2.2em; 
     line-height: 1.8;
   }
-  .Grid {
-    display: block;
-  }
 
-  .Icons {
-    display: none;
-  }
-
-   svg.Icons {
-    display: none;
-  }     
+  /*------------Instruction tricks------------*/
 
   .Content {
     width: 80vw;
@@ -258,6 +261,8 @@ svg.Images{
     width: 74vw !important;
     margin: 0 0 10px 0;
   }  
+
+  /*------------Button tricks------------*/
 
   .Links.Connect > a {
     left: calc(50% - 50px);
@@ -282,14 +287,7 @@ svg.Images{
     top: 25%;
   }
 
-
-}
-
-@media screen and (max-width: 64em) {
-  body {
-    font-size: 2.1em; 
-    line-height: 1.7;
-  }
+  /*------------Grid tricks------------*/
 
   .Grid {
     display: block;
@@ -299,9 +297,21 @@ svg.Images{
     display: none;
   }
 
-   svg.Icons {
+  svg.Icons {
     display: none;
-  }   
+  }  
+
+  svg.Images {
+    opacity: 0.2;
+  }
+
+}
+
+@media screen and (max-width: 64em) {
+  body {
+    font-size: 2.1em; 
+    line-height: 1.7;
+  } 
 }
 
 

@@ -6,11 +6,21 @@ import './skeleton.css';
 
 class FrameElement extends React.Component {
 
+	constructor() {
+	    super();
+	    this.onRef = ref => this.ref = ref;
+	    this.renderFrame = this.renderFrame.bind(this);
+	}
+
+	renderFrame(url) { 
+	  	// console.log(d);
+	  	window.open(url)
+	}
+
 	render() {
 		return (
-			<div className="FrameElement" 
-				style={{ 'left': this.props.id*100 , 'top': this.props.id*100*Math.random() }}>
-				<iframe src={`${this.props.url}`} width={'200px'} height={'200px'} />
+			<div className="FrameElement"  >
+				<img style={{'width': '50px' }} src={this.props.pathToImage} onClick={this.renderFrame(this.props.url)} role="presentation"  />
 			</div>
 	    )
 	}
