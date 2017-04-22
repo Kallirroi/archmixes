@@ -13,23 +13,22 @@ class Instruction extends React.Component {
 		return (
         	<div className="Instruction">
 				<div className="Content">
-					<Timeline style={{'position': 'relative', 'float': 'left'}}
+					<Share url={( '_' )} text={( '_' )} />
+					<br/>
+					<br/>
+					<Timeline
 					    dataSource={{
 					      sourceType: 'profile',
 					      screenName: 'archmixes'
 					    }}
 					    options={{
 					      username: 'Archmixes',
-					      width: '28%',
+					      width: '25%',
 					      height: '550'
 					    }}
 					  />
-					 <Share 
-					 	url={( 'http://twitter.com/archmixes' )}
-					 	
-					 />
-					  <iframe style={{'position': 'relative', 'float': 'right'}} src="https://archmixlist.tumblr.com/" allowFullScreen></iframe>
-					<iframe style={{'position': 'relative', 'float': 'right'}} src="https://www.youtube.com/embed/GuQJ-B7MezA"  allowFullScreen></iframe>
+					<iframe src="https://archmixlist.tumblr.com/" allowFullScreen></iframe>
+					<iframe src="https://www.youtube.com/embed/GuQJ-B7MezA"  allowFullScreen></iframe>
 				</div>
 			</div>
 	    )

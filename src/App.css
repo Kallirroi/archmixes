@@ -188,25 +188,45 @@ svg.Images{
 .Content > p > a {
   color: inherit;
 }
-/* ------------------------------------------------INSTRUCTION------------------------------------------------*/
+/* ------------------------------------------------INSTRUCTIONS------------------------------------------------*/
 
 .Instruction > .Content {
   width: 75%;
 }
 
 .Instruction .Content  > iframe {
-  display: inline-block;
+  display: block;
+  position: relative;
   margin-bottom: 10px;
-  /*position: relative;*/
   border: 3px solid blue;
-  width: 70%;
+  width: 65%;
+  float: right;
   height: 300px;
 }
 
-#twitter-widget-0 {
-  display: inline-block;
+#twitter-widget-0, #twitter-widget-1  {
+  display: block;
+  position: relative;
+  width: 99.3% !important;
   float: left;
   margin: 0 auto;
   /*left: calc(50% - 225px);*/
+  
+}
+
+#twitter-widget-0 > #widget {
+  position: relative !important;
+}
+
+#twitter-widget-0 > .btn-o {
+  left: calc(50% - 30px) !important;
+}
+
+#twitter-widget-1 {
+  width: 30% !important;
   border: 3px solid blue !important; 
+}
+
+#twitter-widget-1::after {
+  content: '';
 }
