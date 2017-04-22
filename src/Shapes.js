@@ -81,6 +81,13 @@ export default [
 		path: 'M19.9,956.4c-8.8,0-15.9,7-15.9,15.8L4,999.9c0,8.8,7,15.9,15.8,15.9l51.5,0.1c8.8,0,15.9-7,15.9-15.8l0.1-27.7c0-8.8-7-15.9-15.8-15.9L19.9,956.4L19.9,956.4z M35.7,972.2l21.8,13.9L35.7,1000L35.7,972.2z',
 		className: "Icons",
 		pathToImage: './images/icons_png/youtube.png'
+	},	
+	{
+		name: "sketchfab",
+		url: "https://sketchfab.com/samtous/models",
+		path: 'M19.9,956.4c-8.8,0-15.9,7-15.9,15.8L4,999.9c0,8.8,7,15.9,15.8,15.9l51.5,0.1c8.8,0,15.9-7,15.9-15.8l0.1-27.7c0-8.8-7-15.9-15.8-15.9L19.9,956.4L19.9,956.4z M35.7,972.2l21.8,13.9L35.7,1000L35.7,972.2z',
+		className: "Icons",
+		pathToImage: './images/icons_png/sketchfab.png'
 	},
 	{
 		name: "bld1",
