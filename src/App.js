@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
 
-
 import Title from './Title';
 import Chart from './Chart';
 
@@ -15,7 +14,7 @@ class App extends Component {
   render() {
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
-    
+
     return (  
       <div className="App">
           <div className="Links Connect"><Link activeStyle={{ 'textDecoration': 'underline' ,'fontWeight': '700'}} to="/">Connect</Link></div>

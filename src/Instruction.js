@@ -13,19 +13,19 @@ class Instruction extends React.Component {
 		return (
         	<div className="Instruction">
 				<div className="Content">
-					<iframe  src="https://archmixlist.tumblr.com/" allowFullScreen></iframe>
-					<iframe  src="https://www.youtube.com/embed/GuQJ-B7MezA"  allowFullScreen></iframe>
-					<Timeline style={{'position': 'absolute'}}
+					<Timeline style={{'position': 'relative', 'float': 'left'}}
 					    dataSource={{
 					      sourceType: 'profile',
 					      screenName: 'archmixes'
 					    }}
 					    options={{
 					      username: 'Archmixes',
-					      width: '450',
-					      height: '250'
+					      width: '28%',
+					      height: '550'
 					    }}
 					  />
+					  <iframe style={{'position': 'relative', 'float': 'right'}} src="https://archmixlist.tumblr.com/" allowFullScreen></iframe>
+					<iframe style={{'position': 'relative', 'float': 'right'}} src="https://www.youtube.com/embed/GuQJ-B7MezA"  allowFullScreen></iframe>
 				</div>
 			</div>
 	    )

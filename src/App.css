@@ -15,7 +15,6 @@ body {
   font-weight: 400;
   font-family: 'Karla';
   color: blue; 
-
   animation: changeGradient 15s ease-in-out infinite;
 }
 
@@ -59,6 +58,7 @@ body {
   text-decoration: none;
   z-index: 3;
   font-size: 1.8em;
+  font-family: 'Karla';
 }
 
 
@@ -127,6 +127,7 @@ image.icons:hover {
 svg.Images{
   margin: 0 auto;
   display: block;
+  position: relative;
   z-index: 1;
 }
 
@@ -173,18 +174,18 @@ svg.Images{
 
 .Instruction .Content  > iframe {
   display: inline-block;
-  margin: 0 10px;
-  position: relative;
+  margin-bottom: 10px;
+  /*position: relative;*/
   border: 3px solid blue;
-  width: 500px;
+  width: 70%;
   height: 300px;
 }
 
-.twitter-timeline.twitter-timeline-rendered {
+#twitter-widget-0 {
   display: inline-block;
+  float: left;
   margin: 0 auto;
-  position: relative !important;
-  left: calc(50% - 225px);
+  /*left: calc(50% - 225px);*/
   border: 3px solid blue !important; 
 }
 

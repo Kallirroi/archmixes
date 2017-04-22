@@ -36,13 +36,13 @@ class SvgRenderer extends Component {
     }
 
     /*----------------------------- SVG parameters --------------------*/
-    let margin = this.props.className === "Icons" ? 30 : 0;
+    let margin = this.props.className === "Icons" ? 60 : 20;
     let width = this.props.width;
     let height = this.props.height;
     let svg = d3.select(this.ref).attr("width", width).attr("height", height + 2*margin);
     
     /*----------------------------- Vis parameters --------------------*/
-    let padding =  this.props.className === "Icons" ?  10 :  20;
+    let padding =  this.props.className === "Icons" ?  10 :  15;
 	let m = 1; // number of distinct clusters
 	let clusters = new Array(m);
 
@@ -62,7 +62,7 @@ class SvgRenderer extends Component {
 			:  width/2 + width * (Math.random() - 0.5),
 		y: element.className==="Icons" ? 
 			height * 0.25 + 10 * (Math.random() - 0.5) 
-			: height/2 + height/2 * (Math.random() - 1)
+			: height/2 + height * (Math.random() - 0.5)
 		};
 	  	
 	  	if (!clusters[i] || (r > clusters[i].radius)) clusters[i] = d;
