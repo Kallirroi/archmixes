@@ -67,7 +67,7 @@ body {
 
 .Links.Connect > a {
   left: calc(50% - 50px);
-  top: 10%;
+  top: 15%;
 }
 
 .Links.Instruction > a {
@@ -92,21 +92,6 @@ body {
 .Grid {
   display: none;
 }
-
-@media screen and (max-width: 767px) { 
-  .Grid {
-    display: block;
-  }
-
-  .Icons {
-    display: none;
-  }
-
-   svg.Icons {
-    display: none;
-  } 
-}
-
 
 /* ------------------------------------------------Icons------------------------------------------------*/
 
@@ -175,13 +160,13 @@ svg.Images{
 }
 
 .Content > div > img {
-  display: inline-block;
+  /*display: inline-block;*/
 }
 
 .Content > img {
   margin: 0 auto;
   display: block;
-  height: 70% ;
+  /*height: 70% ;*/
   margin-bottom: 5vh;
 }
 
@@ -230,3 +215,84 @@ svg.Images{
 #twitter-widget-1::after {
   content: '';
 }
+
+/*-------------------------------------------------*/
+/* =  13. responsive
+/*-------------------------------------------------*/
+@media (min-width: 25.875em) {
+  body {
+    font-size: 2.6em; 
+    line-height: 2.2;
+  }
+    
+  .Grid {
+    display: block;
+  }
+
+  .Icons {
+    display: none;
+  }
+
+   svg.Icons {
+    display: none;
+  }     
+}
+
+
+@media (min-width: 35.5em) {
+  body {
+    font-size: 2.4em; 
+    line-height: 2;
+  }  
+  .Grid {
+    display: block;
+  }
+
+  .Icons {
+    display: none;
+  }
+
+   svg.Icons {
+    display: none;
+  }     
+}
+
+@media (min-width: 37.5em) {
+  body {
+    font-size: 2.2em; 
+    line-height: 1.8;
+  }
+  .Grid {
+    display: block;
+  }
+
+  .Icons {
+    display: none;
+  }
+
+   svg.Icons {
+    display: none;
+  }     
+}
+
+@media (min-width: 64em) {
+  body {
+    font-size: 2.1em; 
+    line-height: 1.7;
+  }
+
+  .Grid {
+    display: block;
+  }
+
+  .Icons {
+    display: none;
+  }
+
+   svg.Icons {
+    display: none;
+  }   
+}
+
+@media (min-width: 71.25em) {}
+
