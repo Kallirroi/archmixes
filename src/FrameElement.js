@@ -8,19 +8,18 @@ class FrameElement extends React.Component {
 
 	constructor() {
 	    super();
-	    this.onRef = ref => this.ref = ref;
 	    this.renderFrame = this.renderFrame.bind(this);
 	}
 
 	renderFrame(url) { 
-	  	// console.log(d);
+	  	// console.log(url);
 	  	window.open(url)
 	}
 
 	render() {
 		return (
-			<div className="FrameElement"  >
-				<img style={{'width': '50px' }} src={this.props.pathToImage} onClick={this.renderFrame(this.props.url)} role="presentation"  />
+			<div className="FrameElement" onClick={ () =>  this.renderFrame(this.props.url)}  >
+				<img style={{'width': '50px' }} src={this.props.pathToImage} role="presentation"  />
 			</div>
 	    )
 	}
