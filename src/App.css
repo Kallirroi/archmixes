@@ -64,7 +64,6 @@ body {
   font-family: 'Karla';
 }
 
-
 .Links.Connect > a {
   left: calc(50% - 50px);
   top: 15%;
@@ -216,19 +215,7 @@ svg.Images{
     font-size: 2.6em; 
     line-height: 2.2;
   }
-
-  .Grid {
-    display: block;
-  }
-
-  .Icons {
-    display: none;
-  }
-
-   svg.Icons {
-    display: none;
-  } 
-    
+  
 }
 
 
@@ -237,17 +224,6 @@ svg.Images{
     font-size: 2.4em; 
     line-height: 2;
   }  
-  .Grid {
-    display: block;
-  }
-
-  .Icons {
-    display: none;
-  }
-
-   svg.Icons {
-    display: none;
-  }     
 
 }
 
@@ -268,6 +244,11 @@ svg.Images{
     display: none;
   }     
 
+  .Content {
+    width: 80vw;
+    top: 40vh;
+  }
+
   .Instruction .Content  > iframe { 
     width: 74vw !important;
     margin: 0 0 10px 0;
@@ -277,6 +258,31 @@ svg.Images{
     width: 74vw !important;
     margin: 0 0 10px 0;
   }  
+
+  .Links.Connect > a {
+    left: calc(50% - 50px);
+    top: 15%;
+  }
+
+  .Links.Instruction > a {
+    writing-mode: horizontal-tb;
+    left: calc(50% - 50px);
+    top: 20%;
+  }
+
+  .Links.About > a{ 
+    left: calc(50% - 50px);
+    top: 30%;
+  }
+
+  .Links.Event > a {
+    writing-mode: horizontal-tb;
+    transform: rotate(0);
+    left: calc(50% - 50px);
+    top: 25%;
+  }
+
+
 }
 
 @media screen and (max-width: 64em) {
