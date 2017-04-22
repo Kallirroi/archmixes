@@ -160,13 +160,13 @@ svg.Images{
 }
 
 .Content > div > img {
-  /*display: inline-block;*/
+  display: inline-block;
 }
 
 .Content > img {
   margin: 0 auto;
   display: block;
-  /*height: 70% ;*/
+  height: 60% ;
   margin-bottom: 5vh;
 }
 
@@ -184,7 +184,7 @@ svg.Images{
   position: relative;
   margin-bottom: 10px;
   border: 3px solid blue;
-  width: 65%;
+  width: 49vw;
   float: right;
   height: 300px;
 }
@@ -199,16 +199,8 @@ svg.Images{
   
 }
 
-#twitter-widget-0 > #widget {
-  position: relative !important;
-}
-
-#twitter-widget-0 > .btn-o {
-  left: calc(50% - 30px) !important;
-}
-
 #twitter-widget-1 {
-  width: 30% !important;
+  width: 22vw !important;
   border: 3px solid blue !important; 
 }
 
@@ -219,12 +211,12 @@ svg.Images{
 /*-------------------------------------------------*/
 /* =  13. responsive
 /*-------------------------------------------------*/
-@media (min-width: 25.875em) {
+@media screen and (max-width: 25.875em) {
   body {
     font-size: 2.6em; 
     line-height: 2.2;
   }
-    
+
   .Grid {
     display: block;
   }
@@ -235,11 +227,12 @@ svg.Images{
 
    svg.Icons {
     display: none;
-  }     
+  } 
+    
 }
 
 
-@media (min-width: 35.5em) {
+@media screen and (max-width: 35.5em) {
   body {
     font-size: 2.4em; 
     line-height: 2;
@@ -255,9 +248,10 @@ svg.Images{
    svg.Icons {
     display: none;
   }     
+
 }
 
-@media (min-width: 37.5em) {
+@media screen and (max-width: 47em) {
   body {
     font-size: 2.2em; 
     line-height: 1.8;
@@ -273,9 +267,19 @@ svg.Images{
    svg.Icons {
     display: none;
   }     
+
+  .Instruction .Content  > iframe { 
+    width: 74vw !important;
+    margin: 0 0 10px 0;
+  }
+
+  #twitter-widget-1 {
+    width: 74vw !important;
+    margin: 0 0 10px 0;
+  }  
 }
 
-@media (min-width: 64em) {
+@media screen and (max-width: 64em) {
   body {
     font-size: 2.1em; 
     line-height: 1.7;
@@ -294,5 +298,4 @@ svg.Images{
   }   
 }
 
-@media (min-width: 71.25em) {}
 

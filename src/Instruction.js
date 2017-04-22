@@ -23,8 +23,7 @@ class Instruction extends React.Component {
 					    }}
 					    options={{
 					      username: 'Archmixes',
-					      width: '25%',
-					      height: '550'
+					      height: '10vh'
 					    }}
 					  />
 					<iframe src="https://archmixlist.tumblr.com/" allowFullScreen></iframe>
