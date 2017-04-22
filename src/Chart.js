@@ -36,10 +36,9 @@ class SvgRenderer extends Component {
     }
 
     /*----------------------------- SVG parameters --------------------*/
-    let margin = this.props.className === "Icons" ? 60 : 20;
     let width = this.props.width;
     let height = this.props.height;
-    let svg = d3.select(this.ref).attr("width", width).attr("height", height + 2*margin);
+    let svg = d3.select(this.ref).attr("width", width).attr("height", height);
     
     /*----------------------------- Vis parameters --------------------*/
     let padding =  this.props.className === "Icons" ?  10 :  15;

@@ -7,7 +7,7 @@ body {
   /*background: linear-gradient(to bottom, #FFDCF9, #DBFFFF);*/
   background-image: linear-gradient(to bottom, rgba(255, 0, 127, 0.3), rgba(0, 0, 255, 0.3), rgba(79, 250, 216, 0.3), rgba(205, 254, 0, 0.3));
   background-size: 200% 200%;
-  width: 100vw;
+  /*width: 100vw;*/
   height: 100vh;
   display: block;
   overflow: hidden;
@@ -27,7 +27,8 @@ body {
 
 .container {
   position: relative;
-  width: 100vw;
+  /*width: 100vw;*/
+  overflow: hidden;
   margin: 0 auto;
   font-family: 'Karla', sans-serif;
 }
@@ -87,6 +88,25 @@ body {
   top: calc(50% - 50px);
 }
 
+/* ------------------------------------------------Grid------------------------------------------------*/
+.Grid {
+  display: none;
+}
+
+@media screen and (max-width: 767px) { 
+  .Grid {
+    display: block;
+  }
+
+  .Icons {
+    display: none;
+  }
+
+   svg.Icons {
+    display: none;
+  } 
+}
+
 
 /* ------------------------------------------------Icons------------------------------------------------*/
 
@@ -98,7 +118,7 @@ body {
   z-index: 2;
 }
 
-svg.Icons{
+svg.Icons {
   margin: 0 auto;
   position: relative;
   display: block;

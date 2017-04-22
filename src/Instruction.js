@@ -26,6 +26,7 @@ class Instruction extends React.Component {
 					  />
 					 <Share 
 					 	url={( 'http://twitter.com/archmixes' )}
+					 	
 					 />
 					  <iframe style={{'position': 'relative', 'float': 'right'}} src="https://archmixlist.tumblr.com/" allowFullScreen></iframe>
 					<iframe style={{'position': 'relative', 'float': 'right'}} src="https://www.youtube.com/embed/GuQJ-B7MezA"  allowFullScreen></iframe>
