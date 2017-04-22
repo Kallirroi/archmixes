@@ -1,5 +1,5 @@
 import React from 'react';
-import { Timeline } from 'react-twitter-widgets';
+import { Timeline, Share } from 'react-twitter-widgets';
 
 
 import './App.css';
@@ -24,6 +24,9 @@ class Instruction extends React.Component {
 					      height: '550'
 					    }}
 					  />
+					 <Share 
+					 	url={( 'http://twitter.com/archmixes' )}
+					 />
 					  <iframe style={{'position': 'relative', 'float': 'right'}} src="https://archmixlist.tumblr.com/" allowFullScreen></iframe>
 					<iframe style={{'position': 'relative', 'float': 'right'}} src="https://www.youtube.com/embed/GuQJ-B7MezA"  allowFullScreen></iframe>
 				</div>
