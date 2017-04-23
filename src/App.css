@@ -77,7 +77,7 @@ body {
 
 .Links.About > a{ 
   top: calc(100vh - 8vh - 10px);
-  left: calc(50vh - 50px);
+  left: calc(50vw - 50px);
 }
 
 .Links.Event > a {
