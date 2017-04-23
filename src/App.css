@@ -301,8 +301,8 @@ svg.Images{
     display: none;
   }  
 
-  .Images  > svg {
-    opacity: 0.6;
+  .Images {
+    display: none;
   }
 
 }
