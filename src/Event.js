@@ -10,7 +10,7 @@ class Event extends React.Component {
 		return (
         <div className="Event">
 			<div className="Content">
-				<img style={{'width': '40vw'}} src="https://s-media-cache-ak0.pinimg.com/564x/75/5b/3e/755b3eb1c706980ad3ca75cfe08bceae.jpg" role="presentation"/>
+				<img style={{'width': '100%'}} src="https://s-media-cache-ak0.pinimg.com/564x/75/5b/3e/755b3eb1c706980ad3ca75cfe08bceae.jpg" role="presentation"/>
 				<p style={{'fontSize': '1.5em'}}>Sam Ghantous </p>
 				<p><Emoji emoji={{ id: 'classical_building'}} size={24} /><Emoji emoji={{ id: 'repeat'}} size={24}/> <br/>
 				04.28.2017-05.11.2017 <br/>
