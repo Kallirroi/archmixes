@@ -39,7 +39,7 @@ body {
   display: block;
   position: fixed;
   top: 1em;
-  left:  calc(50% - 95px);
+  left:  calc(50vw - 95px);
   font-size: 2.2em;
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -65,26 +65,26 @@ body {
 }
 
 .Links.Connect > a {
-  left: calc(50% - 50px);
-  top: 15%;
+  left: calc(50vw - 50px);
+  top: 15vh;
 }
 
 .Links.Instruction > a {
   writing-mode: vertical-rl;
   right: 2vw;
-  top: calc(50% - 50px);
+  top: calc(50vh - 50px);
 }
 
 .Links.About > a{ 
-  top: calc(100% - 8vh - 10px);
-  left: calc(50% - 50px);
+  top: calc(100vh - 8vh - 10px);
+  left: calc(50vh - 50px);
 }
 
 .Links.Event > a {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   left: 2vw;
-  top: calc(50% - 50px);
+  top: calc(50vh - 50px);
 }
 
 /* ------------------------------------------------Grid------------------------------------------------*/
@@ -265,26 +265,26 @@ svg.Images{
   /*------------Button tricks------------*/
 
   .Links.Connect > a {
-    left: calc(50% - 50px);
-    top: 15%;
+    left: calc(50vw - 50px);
+    top: 15vh;
   }
 
   .Links.Instruction > a {
     writing-mode: horizontal-tb;
-    left: calc(50% - 50px);
-    top: 20%;
+    left: calc(50vw - 50px);
+    top: 20vh;
   }
 
   .Links.About > a{ 
-    left: calc(50% - 50px);
-    top: 30%;
+    left: calc(50vw - 50px);
+    top: 30vh;
   }
 
   .Links.Event > a {
     writing-mode: horizontal-tb;
     transform: rotate(0);
-    left: calc(50% - 50px);
-    top: 25%;
+    left: calc(50vw - 50px);
+    top: 25vh;
   }
 
   /*------------Grid tricks------------*/
