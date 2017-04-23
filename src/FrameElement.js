@@ -19,7 +19,7 @@ class FrameElement extends React.Component {
 	render() {
 		return (
 			<div className="FrameElement" onClick={ () =>  this.renderFrame(this.props.url)}  >
-				<img style={{'width': '50px' }} src={this.props.pathToImage} role="presentation"  />
+				<img style={{'width': '10vw' }} src={this.props.pathToImage} role="presentation"  />
 			</div>
 	    )
 	}
