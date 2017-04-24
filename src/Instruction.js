@@ -27,7 +27,7 @@ class Instruction extends React.Component {
 					      height: '10vh'
 					    }}
 					  />
-					<iframe src="https://archmixlist.tumblr.com/" allowFullScreen></iframe>
+					<iframe src="https://docs.google.com/spreadsheets/d/1RrZKh8pdTDijKsjTITJU33WQLNjhkjU3Z5hGIVUYIO8/pubhtml?gid=211184092&amp;single=true&amp;widget=true&amp;headers=false" allowFullScreen></iframe>
 					<iframe src="https://www.youtube.com/embed/GuQJ-B7MezA"  allowFullScreen></iframe>
 				</div>
 			</div>
