@@ -38,7 +38,7 @@ body {
 .Title  .Links  > a {
   display: block;
   position: fixed;
-  top: 1em;
+  top: 2vh;
   left:  calc(50vw - 95px);
   font-size: 2.2em;
   font-weight: 700;
@@ -55,8 +55,6 @@ body {
   position: absolute;
   color: inherit;
   display: block;
-  left: 5vw;
-  top: 5vh;
   width: 100px;
   text-decoration: none;
   z-index: 3;
@@ -268,25 +266,25 @@ svg.Images{
   /*------------Button tricks------------*/
 
   .Links.Connect > a {
-    left: calc(50vw - 50px);
+    left: calc(50vw - 100px);
     top: 15vh;
   }
 
   .Links.Instruction > a {
     writing-mode: horizontal-tb;
-    left: calc(50vw - 50px);
+    left: calc(50vw - 100px);
     top: 20vh;
   }
 
   .Links.About > a{ 
-    left: calc(50vw - 50px);
+    left: calc(50vw - 100px);
     top: 30vh;
   }
 
   .Links.Event > a {
     writing-mode: horizontal-tb;
     transform: rotate(0);
-    left: calc(50vw - 50px);
+    left: calc(50vw - 100px);
     top: 25vh;
   }
 
