@@ -5,6 +5,7 @@
 body { 
   cursor: crosshair; 
   /*background: linear-gradient(to bottom, #FFDCF9, #DBFFFF);*/
+  background-image: -webkit-linear-gradient(top, rgba(255, 0, 127, 0.3), rgba(0, 0, 255, 0.3), rgba(79, 250, 216, 0.3), rgba(205, 254, 0, 0.3));
   background-image: linear-gradient(to bottom, rgba(255, 0, 127, 0.3), rgba(0, 0, 255, 0.3), rgba(79, 250, 216, 0.3), rgba(205, 254, 0, 0.3));
   background-size: 200% 200%;
   /*width: 100vw;*/
@@ -16,7 +17,14 @@ body {
   font-weight: 400;
   font-family: 'Karla';
   color: blue; 
-  animation: changeGradient 15s ease-in-out infinite;
+  -webkit-animation: changeGradient 15s ease-in-out infinite; 
+          animation: changeGradient 15s ease-in-out infinite;
+}
+
+@-webkit-keyframes changeGradient { 
+    0%{ background-position:50% 0% }
+    50%{ background-position:50% 100% }
+    100%{ background-position:50% 0% }
 }
 
 @keyframes changeGradient { 
@@ -68,7 +76,9 @@ body {
 }
 
 .Links.Instruction > a {
-  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
   right: 2vw;
   top: calc(50vh - 50px);
 }
@@ -79,8 +89,11 @@ body {
 }
 
 .Links.Event > a {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
   left: 2vw;
   top: calc(50vh - 50px);
 }
@@ -128,9 +141,14 @@ image.icons:hover {
   /*animation: rollaround 0.5s infinite;*/
 }
 
+@-webkit-keyframes rollaround {
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+
 @keyframes rollaround {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
 }
 
 /* ------------------------------------------------IMAGES------------------------------------------------*/
@@ -221,7 +239,7 @@ svg.Images{
   border: 3px solid blue !important; 
 }
 
-#twitter-widget-1::after {
+#twitter-widget-1:after {
   content: '';
 }
 
@@ -272,7 +290,9 @@ svg.Images{
   }
 
   .Links.Instruction > a {
-    writing-mode: horizontal-tb;
+    -webkit-writing-mode: horizontal-tb;
+        -ms-writing-mode: lr-tb;
+            writing-mode: horizontal-tb;
     left: calc(50vw - 100px);
     top: 20vh;
   }
@@ -283,8 +303,11 @@ svg.Images{
   }
 
   .Links.Event > a {
-    writing-mode: horizontal-tb;
-    transform: rotate(0);
+    -webkit-writing-mode: horizontal-tb;
+        -ms-writing-mode: lr-tb;
+            writing-mode: horizontal-tb;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
     left: calc(50vw - 100px);
     top: 25vh;
   }
