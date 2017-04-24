@@ -93,6 +93,7 @@ body {
   line-height: 5em;
   top: 40vh;
   margin: 0 auto;
+  width: 70vw;
   height: 60vh;
   overflow-y: scroll;  
 }
