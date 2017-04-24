@@ -318,12 +318,22 @@ svg.Images{
   .InstructionMobile > div > a {
     position: relative;
     color: #00f;
-    text-decoration: none;
     font-family: 'Karla';  
     font-weight: 700;
   }
 
+  #twitter-widget-1 {
+    border: none  !important;
+    width: 20vw !important;
+    display: relative;
+    float: left;
+  }
+
   .Instruction .Content  > iframe {
+    display: none;
+  }
+
+  #twitter-widget-0 {
     display: none;
   }
 
