@@ -194,15 +194,13 @@ svg.Images{
   font-family: 'Karla';
 }
 
-.Content > div > img {
-  display: inline-block;
-}
 
 .Content > img {
+  display: inline-block;
   margin: 0 auto;
   display: block;
-  height: 60% ;
-  margin-bottom: 5vh;
+  width: 20vw;
+  margin-bottom: 1vh;
 }
 
 .Content > p > a {

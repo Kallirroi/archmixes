@@ -12,13 +12,13 @@ class About extends React.Component {
 				<div className="Content">
 					<img style={{'float': 'right'}} src="./images/bld5.png" role="presentation"/> 
 					<p> Archmixes is a project by <a href="http://samtous.wtf/" target="_blank"> Sam Ghantous</a>. </p>
-					<p> It has been exhibited at the Yve Yang Loft in New York in 2017 and the MIT ACT Cube in 2016. It has lived online since 2016. </p>
-					<p> Its subject is architecture in a post-net condition. The archmixes twitter bot makes architectural authorship through the prodcution of images, an everyday act, and the objects created become domestic debris. </p>
+					<p> In 2017 it was exhibited at YveYang in New York and the Keller Gallery at MIT, while having lived online since 2016. </p>
+					<p> Its subject is architecture in a post-net condition. The archmixes twitter bot opens up restrictive form of architectural authorship through the production of images, an everyday act, leaving the objects that are created in this process to become domestic debris. </p>
 					<p> Archmix.es is a website made by <a href="http://kalli.website/" target="_blank">Kalli Retzepi.</a> </p>
 					<p> Archmixes would not have existed without the help of many people. Some of them are listed below. </p>
-					<p>My team at large also included Alex Kobald, Grisha Enikolopov, Jamie Farrell, Jason Minor, Liz Galvez, Xhulio Binjaku, Yasaman Tahouni.</p>
+					<p>Archmixes would not have existed without the the direct assistance and otherwise guidance of many people; some of them are listed below.</p>
 					<img style={{'float': 'right' }} src="./images/bld1.png" role="presentation"/>
-					<p>Additional critical feedback provided by Albert Lopez, Austin Wade Smith, Eli Keller, Faiyaz Khan, John May, Lucy Lui, and Peter Osborne.</p>
+					<p>Xhulio Binjaku, Kristina Eldrenkamp, Grisha Enikolopov, Alex Kobald, Anran Li, Jason Minor, Kalli Retzepi, Michael Rosada, Curtis Roth, Austin Smith</p>
 				</div>
 	    	</div>
 	    )
