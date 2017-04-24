@@ -95,9 +95,16 @@ body {
   line-height: 5em;
   top: 40vh;
   margin: 0 auto;
-  width: 50%;
   height: 60vh;
   overflow-y: scroll;  
+}
+
+
+/* ------------------------------------------------Instruction Mobile------------------------------------------------*/
+.InstructionMobile {
+  display: none;
+  margin: 0 auto;
+  position: relative;
 }
 
 /* ------------------------------------------------Icons------------------------------------------------*/
@@ -252,13 +259,9 @@ svg.Images{
     top: 40vh;
   }
 
-  .Instruction .Content  > iframe { 
-    width: 74vw !important;
-    margin: 0 0 10px 0;
-  }
 
   #twitter-widget-1 {
-    width: 74vw !important;
+    width: 73vw !important;
     margin: 0 0 10px 0;
   }  
 
@@ -304,6 +307,27 @@ svg.Images{
   .Images {
     display: none;
   }
+
+  /*------------Instruction Mobile tricks------------*/
+
+  .InstructionMobile {
+    display: block;
+    margin-bottom: 3vh;
+    line-height: 1.7;
+  } 
+
+  .InstructionMobile > div > a {
+    position: relative;
+    color: #00f;
+    text-decoration: none;
+    font-family: 'Karla';  
+    font-weight: 700;
+  }
+
+  .Instruction .Content  > iframe {
+    display: none;
+  }
+
 
 }
 

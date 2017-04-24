@@ -1,6 +1,6 @@
 import React from 'react';
 import { Timeline, Share } from 'react-twitter-widgets';
-
+import InstructionMobile from './InstructionMobile';
 
 import './App.css';
 import './normalize.css';
@@ -16,6 +16,7 @@ class Instruction extends React.Component {
 					<Share url={( '_' )} text={( '_' )} />
 					<br/>
 					<br/>
+					<InstructionMobile />
 					<Timeline
 					    dataSource={{
 					      sourceType: 'profile',
