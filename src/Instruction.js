@@ -13,7 +13,7 @@ class Instruction extends React.Component {
 		return (
         	<div className="Instruction">
 				<div className="Content">
-					<Share url={ '_' } text={ '_' } size={ 'large' }/> 
+					<Share className="Share" url={ '_' } text={ '_' } size={ 'large' }/> 
 
 					<br/>
 					<br/>

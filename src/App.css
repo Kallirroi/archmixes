@@ -234,11 +234,8 @@ svg.Images{
   z-index: 1 !important;
 }
 
-#twitter-widget-0 > iframe {
-  src: none;
-}
 
-#twitter-widget-1, #twitter-widget-2 {
+#twitter-widget-2 {
   width: 22vw !important;
   border: 3px solid blue !important; 
   display: block;
@@ -247,9 +244,6 @@ svg.Images{
   margin: 0 auto;
 }
 
-#twitter-widget-1:after {
-  content: '';
-}
 
 /*-------------------------------------------------*/
 /* =  13. responsive
