@@ -18,7 +18,7 @@ class About extends React.Component {
 					<p> Archmixes would not have existed without the help of many people. Some of them are listed below. </p>
 					<p>Archmixes would not have existed without the the direct assistance and otherwise guidance of many people; some of them are listed below.</p>
 					<img style={{'float': 'right' }} src="./images/bld1.png" role="presentation"/>
-					<p>Xhulio Binjaku, Kristina Eldrenkamp, Grisha Enikolopov, Alex Kobald, Anran Li, Jason Minor, Kalli Retzepi, Michael Rosada, Curtis Roth, Austin Smith</p>
+					<p>Xhulio Binjaku, Kristina Eldrenkamp, Grisha Enikolopov, Alex Kobald, Anran Li, Jason Minor, Kalli Retzepi, Michael Rosada, Austin Smith</p>
 				</div>
 	    	</div>
 	    )
