@@ -222,7 +222,7 @@ svg.Images{
   height: 300px;
 }
 
-#twitter-widget-0, #twitter-widget-1, #twitter-widget-2 {
+#twitter-widget-0 {
   display: block;
   position: relative;
   width: 99.3% !important;
@@ -235,6 +235,10 @@ svg.Images{
 #twitter-widget-1, #twitter-widget-2 {
   width: 22vw !important;
   border: 3px solid blue !important; 
+    display: block;
+  position: relative;
+  float: left;
+  margin: 0 auto;
 }
 
 #twitter-widget-1:after {
