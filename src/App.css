@@ -225,17 +225,23 @@ svg.Images{
 #twitter-widget-0 {
   display: block;
   position: relative;
-  width: 99.3% !important;
+  /*opacity: 0.1;*/
+  width: auto;
   float: left;
   margin: 0 auto;
-  /*left: calc(50% - 225px);*/
-  
+  background: #1B95E0;
+  border: 10px solid #1B95E0 !important; 
+  z-index: 1 !important;
+}
+
+#twitter-widget-0 > iframe {
+  src: none;
 }
 
 #twitter-widget-1, #twitter-widget-2 {
   width: 22vw !important;
   border: 3px solid blue !important; 
-    display: block;
+  display: block;
   position: relative;
   float: left;
   margin: 0 auto;
