@@ -38,7 +38,7 @@ export default [
 	},
 	{
 		name: "facebook",
-		url: "https://facebook.com/",
+		url: "https://www.facebook.com/profile.php?id=100013989014757",
 		path: 'M50.2,3.1L37.1,3c0,0-14.7-1.1-18.5,13.7c0,0-1.4,3.9-1.2,13.5L3.1,30.2l0,11.3l15.4,0.1l-0.2,42.6l15.4,0.1l0.2-42.6l15.4,0.1l0-11.4l-15.4-0.1c0,0,0-2.4,0-6.8c0-4.4,3-8.7,9.8-8.6l6.4,0L50.2,3.1z',
 		className: "Icons",
 		pathToImage: './images/icons_png/facebook.png'
